@@ -1,0 +1,21 @@
+---
+title: "Accueil"
+---
+
+**State of the R** est un groupe de chercheurs et d'ingénieurs utilisateurs quotidiens de `R` se réunissant pour 
+
+  - perfectionner la diffusion de leur méthodes statistiques via `R` 
+  - partager et approfondir leur savoir-faire 
+  - échanger autour des dernières innovations de `R` et `Rstudio`
+  
+Le groupe s'est formé à l'occasion d'une semaine d'ateliers du 28 août au 1er septembre 2017 à la station biologique de Roscoff. Cet atelier a donné lieu 
+
+  - à l'écriture d'un [mini poly bookdown](http://cambroise.github.io/stateofther2017)
+  - à la formation d'un [groupe github](https://github.com/StateOfTheR) où seront hébergés nos projets
+  
+De l'avis des participants, cette expérience enrichissante et motivante gagnerait à être reconduite sur une base annuelle.
+
+
+
+
+  

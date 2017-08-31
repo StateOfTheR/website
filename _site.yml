@@ -1,0 +1,26 @@
+name: "StateOfTheRWebSite"
+output_dir: "docs"
+navbar:
+  title: "State of the R"
+  left:
+    - text: "Accueil"
+      href: index.html
+      icon: fa-home
+    - text: "À propos"
+      href: about.html
+      icon: fa-info
+
+  right: 
+    - text: github
+      icon: fa-github
+      href: http://github.com/StateOfTheR
+
+output:
+  html_document:
+    theme: flatly
+    highlight: textmate
+    include:
+      in_header: header.html
+      after_body: footer.html
+    css: style.css
+
