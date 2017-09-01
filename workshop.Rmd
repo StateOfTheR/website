@@ -1,0 +1,32 @@
+---
+title: "Ateliers passés"
+---
+
+## Finist'R 17
+
+<span class="fa fa-map-signs"></span> Lieu: station biologique de Roscoff
+
+<span class="fa fa-calendar"></span> Date: 28 août au 1er septembre 2017
+
+<span class="fa fa-folder-open"></span> Réalisations
+
+  - Écriture d'un [mini poly bookdown](http://cambroise.github.io/stateofther2017)
+  - Formation d'un [groupe github](https://github.com/StateOfTheR) où seront hébergés nos projets.
+
+### Sponsors
+
+[MIA 518](https://www6.inra.fr/mia-paris)
+
+Paris Saclay Center for Data Science
+
+```{r,  out.width="50px", echo=FALSE, fig.show='hide'}
+knitr::include_graphics("https://project.inria.fr/saclaycds/files/2017/02/cropped-logoOnly-1.png", auto_pdf = TRUE, dpi = NA)
+```
+
+```{r,  out.width="200px", echo=FALSE, fig.show='hide'}
+knitr::include_graphics("https://upload.wikimedia.org/wikipedia/fr/f/f5/AgroParisTech_-_logo.PNG", auto_pdf = TRUE, dpi = NA)
+```
+
+
+
+  

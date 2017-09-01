@@ -1,3 +1,10 @@
+[class^="icon-custom-"],
+[class*=" icon-custom-"] {
+  background-image: url("img/phare.png");
+}
+
+.icon-custom-phare { background-position: -395px -60px; width: 24px; height: 24px  } 
+
 banner {
   width: 100%;
   height: 100%;

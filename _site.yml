@@ -6,11 +6,22 @@ navbar:
     - text: "Accueil"
       href: index.html
       icon: fa-home
+    - text: "Réunions"
+      href: meetings.html
+      icon: fa-calendar
+    - text: "Ateliers passés"
+      href: workshop.html
+      icon: fa-hourglass
+      menu:
+        - text: "En deux mots"
+          href: workshop.html
+        - text: "---------"
+        - text: "Finist'R 2017"
+          href: http://cambroise.github.io/stateofther2017
+  right: 
     - text: "À propos"
       href: about.html
       icon: fa-info
-
-  right: 
     - text: github
       icon: fa-github
       href: http://github.com/StateOfTheR
