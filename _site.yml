@@ -17,7 +17,7 @@ navbar:
           href: workshop.html
         - text: "---------"
         - text: "Finist'R 2017"
-          href: http://cambroise.github.io/stateofther2017
+          href: http://stateofther.github.io/finistR2017/
   right: 
     - text: "À propos"
       href: about.html

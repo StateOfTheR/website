@@ -10,8 +10,8 @@ title: "Accueil"
   
 Le groupe s'est formé à l'occasion d'une semaine d'ateliers du 28 août au 1er septembre 2017 à la station biologique de Roscoff. Ces ateliers ont donné lieu à 
 
-  - l'écriture d'un [mini poly bookdown](http://cambroise.github.io/stateofther2017)
-  - la formation d'un [groupe github](https://github.com/StateOfTheR) où seront hébergés nos projets.
+  - l'écriture d'un [mini poly bookdown](http://stateofther.github.io/finistR2017/) résumant les activités de la semaine
+  - la formation d'un [groupe github](https://github.com/StateOfTheR) où sont hébergés nos projets en cours et à venir.
   
 De l'avis des participants, cette expérience enrichissante et motivante gagnerait à être reconduite sur une base annuelle.
 

@@ -10,7 +10,8 @@ title: "Ateliers passés"
 
 <span class="fa fa-folder-open"></span> Réalisations
 
-  - Écriture d'un [mini poly bookdown](http://cambroise.github.io/stateofther2017)
+
+  - Écriture d'un [mini poly bookdown](https://stateofther.github.io/finistR2017/)
   - Formation d'un [groupe github](https://github.com/StateOfTheR) où seront hébergés nos projets.
 
 ### Sponsors
