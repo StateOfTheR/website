@@ -10,7 +10,7 @@ weight = 3
 
 +++
 
-## Bookdown Finiste'R 2017
+## Bookdown Finist'R 2017
 
 Écriture d'un [mini poly bookdown](http://stateofther.github.io/finistR2017/) résumant les activités de la semaine [FinistR](post/roscoff2017/)
 

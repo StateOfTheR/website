@@ -17,3 +17,4 @@ weight = 1
   - partager et approfondir leur savoir-faire 
   - échanger autour des dernières innovations de `R` et `Rstudio`
 
+![AgroParisTech](/img/logo_agro.png)

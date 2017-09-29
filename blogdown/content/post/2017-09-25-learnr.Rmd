@@ -1,5 +1,5 @@
 ---
-title: Retour d'expérience learnr
+title: Atelier découverte LearnR
 author: ~
 date: '2017-09-25'
 slug: learnr
@@ -48,7 +48,9 @@ knitr::opts_chunk$set(echo = TRUE)
 <!-- - le package produit des supports plus adaptés à des interventions de type tutoriel ou des auto-évaluations -->
 <!-- - inconvénients liés à l'indépendance des chunks; nécessite d'ajouter des lignes de code dans le setup ou de faire des liens entre chunks (mais comment?) -->
 
-`learnr` est un package R qui permet de créer des tutoriels (voir le [site dédié](https://rstudio.github.io/learnr/) ou [le blog de présentation](https://blog.rstudio.com/2017/07/11/introducing-learnr/)). Les tutoriels incluent du texte, des champs pour taper et exécuter des commandes `R` (pouvant être pré-formatés) et des questionnaires à choix multiples. 
+### Vue d'ensemble
+
+Le package  `learnr` permet de créer des tutoriels (voir le [site dédié](https://rstudio.github.io/learnr/) ou [le blog de présentation](https://blog.rstudio.com/2017/07/11/introducing-learnr/)). Les tutoriels incluent du texte, des champs pour taper et exécuter des commandes `R` (pouvant être pré-formatés) et des questionnaires à choix multiples. 
 Les champs peuvent inclure des indices à afficher pour l'utilisateur ou des solutions. 
 Pour fonctionner, le document créé au format Rmarkdown doit être envoyé sur un serveur shiny. Il est alors
 nécessaire de créér un compte sur [shinyapp](https://www.shinyapps.io/).
@@ -56,7 +58,7 @@ nécessaire de créér un compte sur [shinyapp](https://www.shinyapps.io/).
 Avec uniquement le package `learnr`, il est uniquement possible de vérifier que les réponses données aux questions à choix multiples sont les bonnes. Par contre, il n'est pas possible de vérifier les commandes `R` tapées ni leur résultat. 
 Un package [checkr](https://github.com/dtkaplan/checkr) disponible sur github doit permettre de faire ces vérifications.
 
-
+### Limitations
 
 Des essais menés, il a été conclu que `learnr` est un package intéressant mais qui ne permettra pas forcément de faire un TP complet de statistique sous R.
 Toutefois, il  peut être employé pour :
@@ -67,22 +69,18 @@ Toutefois, il  peut être employé pour :
 
 - proposer des auto-évaluations pour les étudiants.
 
-
-Cependant nous nous sommes heurtés à certaines limites :
+Nous nous sommes heurtés à certaines limites :
 
 - il n'est pas possible de récupérer les commandes tapées dans les champs `R` par l'utilisateur ni les résultats correspondants. Ainsi un étudiant n'aura aucune trace de son travail si cet outil est employé pour le faire travailler en TP.
 
 - il n'est pas possible de récupérer les commandes tapées dans les champs `R` ni les réponses aux questions à choix multiples afin de les centraliser et de s'en servir à des fins d'évaluations.
 
-
 - les "chunks" (environnement permettant de créer des champs `R`) sont indépendants les uns des autres donc il est difficile de construire une progressivité dans un travail avec `learnr`. On peut définir au début dans un chunk `setup`, 
 un environnement général qui sera commun à tous les champs `R`. On peut également pour chaque chunk ajouter un chunk du même nom auquel on ajoute `-setup` pour définir un environnement propre au champ correspondant.
 
-
 - le document `learnr` étant hébergé sur un serveur, l'importation des données ne peut pas être présentée de manière classique en local. Les données doivent être chargées à partir d'une adresse web.
 
-
-Quelques astuces utiles :
+### Quelques astuces utiles :
 
   1- `exercise.timelimit = 10` permet de limiter le temps de réponses, `exercise.lines = 5` pour définir le nombre de lignes de console permettant de répondre.
 

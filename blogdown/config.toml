@@ -21,7 +21,7 @@ defaultContentLanguageInSubdir = false
 
 [params]
   name = "State of the R"
-  role = "Groupe d'utilisateur de R"
+  role = "Groupe d'utilisateurs de R"
   organization = "AgroParisTech/INRA"
   organization_url = "http://stateofther.github.io"
   avatar = "phare.png"  # Specify an avatar image (in `static/img/` folder) or delete value to disable
