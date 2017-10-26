@@ -664,6 +664,34 @@ show(DT3) ## je ne comprends pas pourquoi il faut utiliser show pour l'affichage
 </div>
 <div id="dplyr-12" class="section level4">
 <h4>dplyr</h4>
+<pre class="r"><code>left_join(TB1, TB2, by = c(&quot;id&quot;, &quot;code&quot;))</code></pre>
+<pre><code>## # A tibble: 9 x 7
+## # Groups:   code [?]
+##      id  code  valA  valB  valC  valD   mul
+##   &lt;int&gt; &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt;
+## 1     1     c     8    11   120    11     3
+## 2     1     b     5    11   117    11    NA
+## 3     1     c     8    13   160    11     3
+## 4     1     c     8    14   180    11     3
+## 5     2     a     3    14   171    14    NA
+## 6     2     a     3    15   189    14    NA
+## 7     1     b     5    16   207    11    NA
+## 8     2     a     3    17   225    14    NA
+## 9     1     c     8    19   280    11     3</code></pre>
+</div>
+<div id="data.table-12" class="section level4">
+<h4>data.table</h4>
+<pre class="r"><code>merge(DT1, DT2, all.x = TRUE)</code></pre>
+<pre><code>##    id code valA valB valC valD mul
+## 1:  1    b    5   11  117   11  NA
+## 2:  1    b    5   16  207   11  NA
+## 3:  1    c    8   11  120   11   3
+## 4:  1    c    8   13  160   11   3
+## 5:  1    c    8   14  180   11   3
+## 6:  1    c    8   19  280   11   3
+## 7:  2    a    3   14  171   14  NA
+## 8:  2    a    3   15  189   14  NA
+## 9:  2    a    3   17  225   14  NA</code></pre>
 </div>
 </div>
 
