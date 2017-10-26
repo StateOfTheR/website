@@ -211,7 +211,7 @@ aggregate(.~ id , subset(DF1, id >=2 & code %in% c("a","c"), -code), sum)
 TB1 %>% 
   group_by(id) %>% 
   filter(id >=2, code %in% c("a", "c")) %>% 
-  select(-code) %>% 
+  select(-code, -valC) %>% 
   summarise_all(sum)
 ```
 
@@ -228,7 +228,7 @@ _Replace valA with max(valA)-min(valA) grouped by code_
 #### base
 
 ```{r}
-DF1 <- transform(DF1, valA = rep(tapply(valA, code, function(x) diff(range(x))), table(code)))
+DF1 <- transform(DF1, valA = rep(tapply(valA, code, function(x) diff(range(x)))[code]))
 DF1
 ```
 
@@ -253,14 +253,27 @@ _Create a new col named valD with max(valB)-min(valA) grouped by code_
 #### base
 
 ```{r}
-DF1 <- transform(DF1, valD = rep(
-  by(DF1[, c("valA", "valB")], code, function(x) diff(range(x))), table(code))
-)
+DF1 <- transform(DF1, valD = by(DF1, code, function(x) max(x$valB) - min(x$valA))[code])
+DF1
+```
+
+#### dplyr
+
+```{r}
+TB1 <- TB1 %>% group_by(code) %>% mutate(valD= max(valB)-min(valA))
+TB1
+```
+
+#### data.table
+
+```{r}
+DT1[, "valD" := max(valB)-min(valA), by=code] 
+DT1
 ```
 
 ### Question 10
 
-_Subset DF1 by DF2 on id,code column. That is, for each row of DF2$id, DF2$code, get valA and valB cols from DF1. Include rows that have no matches as well._
+_Subset DF1 by DF2 on id,code column. That is, for each row of DF2\$id, DF2\$code, get valA and valB cols from DF1. Include rows that have no matches as well._
 
 #### base 
 
@@ -268,20 +281,48 @@ _Subset DF1 by DF2 on id,code column. That is, for each row of DF2$id, DF2$code,
 merge(DF1, DF2[, c("id", "code")], by = c("id", "code"), all.y=TRUE)
 ```
 
+#### dplyr
+
+```{r}
+right_join(TB1, TB2 %>% select(id, code), by = c("id", "code")) 
+## inner_join to keep only rows present in tibbles, left_join to keep all rows from TB1
+## anti_join to keep only rows from TB1 with no matching rows in TB2
+```
+
+#### data.table
+
+```{r}
+merge(DT1, DT2[ , .(id, code)], all.y = TRUE)
+```
+
 ### Question 11
 
-_Same as (10), but fetch just the first matching row of DF1 for each row of DF2$id, DF2$code. Exclude non-matching rows._
+_Same as (10), but fetch just the first matching row of DF1 for each row of DF2\$id, DF2\$code. Exclude non-matching rows._
 
 #### base
 
 ```{r}
 merge(DF1[!duplicated(DF1[, c("id", "code")]), ],
-      DF2[, c("id", "code")], by = c("id", "code"), all.y=TRUE)
+      DF2[, c("id", "code")], by = c("id", "code"))
+```
+
+#### dplyr 
+
+```{r}
+TB1 %>% group_by(id, code) %>% slice(1) %>% ## first entry in each (id, code) group
+  inner_join(select(TB2, id, code), by = c("id", "code"))
+```
+
+#### data.table
+
+```{r}
+merge(DT1[, .SD[1], by = list(id, code)], ## first entry in each (id, code) group
+      DT2[ , .(id, code)])
 ```
 
 ### Question 12
 
-_For every row of DF2$id, DF2$code that matches with DF1’s, update  valA with valA*mul._
+_For every row of DF2\$id, DF2\$code that matches with DF1’s, update valA with valA\*mul._
 
 #### base 
 
@@ -289,12 +330,39 @@ _For every row of DF2$id, DF2$code that matches with DF1’s, update  valA with 
 transform(merge(DF1, DF2, by = c("id", "code"), all.y=TRUE), valA = valA * mul)
 ```
 
+#### dplyr 
+
+```{r}
+right_join(TB1, TB2, by = c("id", "code")) %>% mutate(valA = valA * mul)
+```
+
+#### data.table
+
+```{r}
+DT3 <- merge(DT1, DT2, all.y = TRUE)[ , "valA" := valA * mul]
+show(DT3) ## je ne comprends pas pourquoi il faut utiliser show pour l'affichage
+```
+
+
 ### Question 13
 
-_Add a new column val to DF1 with values from DF2$mul where DF2$id, DF2$code matches with DF1’s. Rows that don’t match should have NA._
+_Add a new column val to DF1 with values from DF2\$mul where DF2\$id, DF2\$code matches with DF1’s. Rows that don’t match should have NA._
 
 #### base
 
 ```{r}
 transform(merge(DF1, DF2, by = c("id", "code"), all.x = TRUE, sort = FALSE), mul = mul)
 ```
+
+#### dplyr
+
+```{r}
+left_join(TB1, TB2, by = c("id", "code"))
+```
+
+#### data.table
+
+```{r}
+merge(DT1, DT2, all.x = TRUE)
+```
+
