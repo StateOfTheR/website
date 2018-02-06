@@ -247,7 +247,7 @@ defaultContentLanguageInSubdir = false
   weight = 1
 
 [[menu.main]]
-  name = "Atelier à venir"
+  name = "Ateliers à venir"
   url = "#upcoming_workshops"
   weight = 2
 
