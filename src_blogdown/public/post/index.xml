@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on State of The R</title>
+    <link>/post/</link>
+    <description>Recent content in Posts on State of The R</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    <copyright>&amp;copy; 2018 State of the R</copyright>
+    <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0100</lastBuildDate>
+    
+	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Exercices autour de data.table</title>
+      <link>/post/data.table/</link>
+      <pubDate>Mon, 23 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/data.table/</guid>
+      <description>L’atelier du jour avait pour objectif la découvert du package data.table au travers d’exercises proposés lors de la dernière édition de UseR. Les slides avec les énoncés sont disponibles ici.
+L’apport de notre atelier est d’avoir systématiquement essayé de traiter les questions avec - les fonctionalités R de base - les fonctionalités offertes par le tidyverse (principalement dplyr) - les fonctionnalités du package data.table
+Pour les animateurs : vous êtes libre de compléter le post de blog.</description>
+    </item>
+    
+    <item>
+      <title>Atelier découverte LearnR</title>
+      <link>/post/learnr/</link>
+      <pubDate>Mon, 25 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/learnr/</guid>
+      <description>Vue d’ensemble Le package learnr permet de créer des tutoriels (voir le site dédié ou le blog de présentation). Les tutoriels incluent du texte, des champs pour taper et exécuter des commandes R (pouvant être pré-formatés) et des questionnaires à choix multiples. Les champs peuvent inclure des indices à afficher pour l’utilisateur ou des solutions. Pour fonctionner, le document créé au format Rmarkdown doit être envoyé sur un serveur shiny. Il est alors nécessaire de créér un compte sur shinyapp.</description>
+    </item>
+    
+    <item>
+      <title>Finist&#39;R 2017</title>
+      <link>/post/roscoff2017/</link>
+      <pubDate>Sun, 03 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/roscoff2017/</guid>
+      <description>À l&amp;rsquo;occasion d&amp;rsquo;une semaine d&amp;rsquo;ateliers du 28 août au 1er septembre 2017 à la station biologique de Roscoff, nous avons lancé
+ l&amp;rsquo;écriture d&amp;rsquo;un mini poly bookdown résumant les activités de la semaine la formation d&amp;rsquo;un groupe github où sont hébergés nos projets en cours et à venir.  </description>
+    </item>
+    
+    <item>
+      <title>Academic: the website designer for Hugo</title>
+      <link>/post/getting-started/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
+      
+      <guid>/post/getting-started/</guid>
+      <description>Academic is a framework to help you create a beautiful website quickly. Perfect for personal sites, blogs, or business/project sites. Check out the latest demo of what you&amp;rsquo;ll get in less than 10 minutes. Then head on over to the Quick Start guide or take a look at the Release Notes.
+
+Key features:
+ Easily manage various content including homepage, blog posts, publications, talks, and projects Extensible via color themes and widgets/plugins Write in Markdown for easy formatting and code highlighting, with LaTeX for mathematical expressions Social/academic network linking, Google Analytics, and Disqus comments Responsive and mobile friendly Simple and refreshing one page design Multilingual and easy to customize  Color Themes Academic is available in different color themes and font themes.</description>
+    </item>
+    
+    <item>
+      <title>Hello R Markdown</title>
+      <link>/post/2015-07-23-r-rmarkdown/</link>
+      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
+      
+      <guid>/post/2015-07-23-r-rmarkdown/</guid>
+      <description>R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
+You can embed an R code chunk like this:
+summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
+    </item>
+    
+  </channel>
+</rss>

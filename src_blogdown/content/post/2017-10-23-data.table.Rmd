@@ -1,0 +1,368 @@
+---
+title: Exercices autour de data.table
+author: ~
+date: '2017-10-23'
+slug: data.table
+categories: ["R"]
+tags: ["workshop", "package", "tidy", "data.table", "dplyr"]
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+L'atelier du jour avait pour objectif la découvert du package [data.table](https://cran.r-project.org/web/packages/data.table/index.html) au travers d'[exercises proposés lors de la dernière édition de UseR](https://user2017.sched.com/event/Aw0L/datatable-for-beginners). Les slides avec les énoncés sont [disponibles ici](https://www.google.fr/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwiZv7DE6I3XAhWCuBoKHcN5CREQFggrMAA&url=https%3A%2F%2Fchannel9.msdn.com%2FEvents%2FuseR-international-R-User-conferences%2FuseR-International-R-User-2017-Conference%2Fdatatable-for-beginners&usg=AOvVaw3N-q_5oW0-yMm8uz9hVisu).
+
+L'apport de notre atelier est d'avoir systématiquement  essayé de traiter les questions avec 
+  - les fonctionalités `R` de *base*
+  - les fonctionalités offertes par le *tidyverse* (principalement *dplyr*)
+  - les fonctionnalités du package *data.table*
+  
+Pour les animateurs : vous êtes libre de compléter le post de blog. Nous ajouteroins des comparatifs en terme de temps de calcul plus tard (peut-être).
+
+### Préliminaires
+
+C'est parti, on charge oles packages requis
+
+```{r, message=FALSE}
+library(data.table)
+library(tidyverse)
+```
+
+Les exercices seront traités à l'aide de deux tables jouets, dont on propose des contreparties en
+  - object `data.frame`
+  - object `tibble`
+  - object `data.table`
+  
+```{r}
+set.seed(20170703L)
+DF1 = data.frame(id = sample(1:2, 9L, TRUE), 
+                 code = sample(letters[1:3], 9, TRUE), 
+                 valA = 1:9, valB = 10:18, 
+                 stringsAsFactors = FALSE)
+DF2 = data.frame(id = c(3L, 1L, 1L, 2L, 3L), 
+                 code = c("b", "a", "c", "c", "d"), 
+                 mul = 5:1, stringsAsFactors = FALSE)
+## corresponding data tibble
+TB1 <- as.tibble(DF1)
+TB2 <- as.tibble(DF2)
+## corresponding data tables
+DT1 <- as.data.table(DF1)
+DT2 <- as.data.table(DF2)
+
+```
+
+
+### Question 1
+
+_Subset all rows where id column equals 1 & code column is not equal to "c"_
+
+#### base
+
+```{r}
+base::subset(DF1, id == 1 & code != "c")
+with(DF1, DF1[id == 1 & code != "c",])
+```
+
+#### dplyr
+
+```{r}
+filter(TB1, id == 1 & code != "c")
+```
+
+#### data.table
+
+```{r}
+DT1[id == 1 & code != "c"] 
+```
+
+### Question 2
+
+_Select valA and valB columns from DF1_
+
+#### base R
+
+```{r}
+DF1[, c("valA", "valB")]
+```
+
+#### dplyr
+
+```{r}
+select(TB1, valA, valB)
+```
+
+#### data.table
+
+```{r}
+DT1[ , .(valA,valB)]
+```
+
+### Question 3
+
+_Get sum(valA) and sum(valB) for id > 1 as a 1-row, 2-col data.frame_
+
+#### base R
+
+```{r}
+colSums(DF1[ DF1$id > 1, c("valA", "valB")])
+```
+
+#### dplyr
+
+```{r}
+TB1 %>% filter(id > 1) %>% select(valA, valB) %>% summarise_all(sum)
+```
+
+#### data.table
+
+```{r}
+DT1[id > 1, .(sum(valA), sum(valB))]
+```
+
+### Question 4
+
+_Replace valB with valB+1 for all rows where code == "c"_
+
+#### base R
+
+```{r}
+DF1$valB[DF1$code=="c"] = DF1$valB[DF1$code=="c"] + 1
+DF1
+```
+
+#### dplyr
+
+```{r}
+TB1 <- TB1 %>% mutate(valB = ifelse(code == "c", valB + 1,valB))
+## TB1[TB1$code=="c", ] <- filter(TB1, code=="c") %>% mutate(valB= valB+1) # alternative solution
+TB1
+```
+
+#### data.table
+
+```{r}
+DT1[code == "c", valB := valB + 1L]
+DT1
+```
+
+### Question 5
+
+_Add a new column valC column with values equal to valB^2 - valA^2_
+
+#### base R
+
+```{r}
+DF1 <- transform(DF1, valC = valB^2 - valA^2)
+## DF1$valC <- DF1$valB^2 - DF1$valA^2 # alternate solution
+DF1
+```
+
+#### dplyr
+
+```{r}
+TB1 <- mutate(TB1, valC = valB^2 - valA^2)
+TB1
+```
+
+#### data.table
+
+```{r}
+DT1[, valC := valB^2 - valA^2]
+DT1
+```
+
+### Question 6
+
+_Get sum(valA) and sum(valB) grouped by id and code (i.e., for each unique combination of id,code)_
+
+#### base
+
+```{r}
+aggregate(.~ id + code, DF1, sum)
+aggregate(DF1[, c("valA", "valB")], list(DF1$id, DF1$code), sum)
+```
+
+#### dplyr 
+
+```{r}
+TB1 %>% group_by(id, code) %>% summarise_all(sum)
+```
+
+#### data.table
+
+```{r}
+DT1[, .(SumA=sum(valA), SumB = sum(valB)), by=list(id,code) ] 
+```
+
+### Question 7
+
+_Get sum(valA) and sum(valB) grouped by id for id >= 2 & code %in% c("a", "c")_
+
+#### base
+
+```{r}
+aggregate(.~ id , subset(DF1, id >=2 & code %in% c("a","c"), -code), sum)
+```
+
+#### dplyr
+
+```{r}
+TB1 %>% 
+  group_by(id) %>% 
+  filter(id >=2, code %in% c("a", "c")) %>% 
+  select(-code, -valC) %>% 
+  summarise_all(sum)
+```
+
+#### data.table
+
+```{r}
+DT1[ (id>=2) & code %in% c("a", "c") , .(SumA=sum(valA), SumB = sum(valB)), by=id ] 
+```
+
+### Question 8
+
+_Replace valA with max(valA)-min(valA) grouped by code_
+
+#### base
+
+```{r}
+DF1 <- transform(DF1, valA = rep(tapply(valA, code, function(x) diff(range(x)))[code]))
+DF1
+```
+
+#### dplyr
+
+```{r}
+TB1 <- TB1 %>% group_by(code) %>% mutate(valA= max(valA)-min(valA))
+TB1
+```
+
+#### data.table
+
+```{r}
+DT1[, "valA" := max(valA)-min(valA), by=code] 
+DT1
+```
+
+### Question 9
+
+_Create a new col named valD with max(valB)-min(valA) grouped by code_
+
+#### base
+
+```{r}
+DF1 <- transform(DF1, valD = by(DF1, code, function(x) max(x$valB) - min(x$valA))[code])
+DF1
+```
+
+#### dplyr
+
+```{r}
+TB1 <- TB1 %>% group_by(code) %>% mutate(valD= max(valB)-min(valA))
+TB1
+```
+
+#### data.table
+
+```{r}
+DT1[, "valD" := max(valB)-min(valA), by=code] 
+DT1
+```
+
+### Question 10
+
+_Subset DF1 by DF2 on id,code column. That is, for each row of DF2\$id, DF2\$code, get valA and valB cols from DF1. Include rows that have no matches as well._
+
+#### base 
+
+```{r}
+merge(DF1, DF2[, c("id", "code")], by = c("id", "code"), all.y=TRUE)
+```
+
+#### dplyr
+
+```{r}
+right_join(TB1, TB2 %>% select(id, code), by = c("id", "code")) 
+## inner_join to keep only rows present in tibbles, left_join to keep all rows from TB1
+## anti_join to keep only rows from TB1 with no matching rows in TB2
+```
+
+#### data.table
+
+```{r}
+merge(DT1, DT2[ , .(id, code)], all.y = TRUE)
+```
+
+### Question 11
+
+_Same as (10), but fetch just the first matching row of DF1 for each row of DF2\$id, DF2\$code. Exclude non-matching rows._
+
+#### base
+
+```{r}
+merge(DF1[!duplicated(DF1[, c("id", "code")]), ],
+      DF2[, c("id", "code")], by = c("id", "code"))
+```
+
+#### dplyr 
+
+```{r}
+TB1 %>% group_by(id, code) %>% slice(1) %>% ## first entry in each (id, code) group
+  inner_join(select(TB2, id, code), by = c("id", "code"))
+```
+
+#### data.table
+
+```{r}
+merge(DT1[, .SD[1], by = list(id, code)], ## first entry in each (id, code) group
+      DT2[ , .(id, code)])
+```
+
+### Question 12
+
+_For every row of DF2\$id, DF2\$code that matches with DF1’s, update valA with valA\*mul._
+
+#### base 
+
+```{r}
+transform(merge(DF1, DF2, by = c("id", "code"), all.y=TRUE), valA = valA * mul)
+```
+
+#### dplyr 
+
+```{r}
+right_join(TB1, TB2, by = c("id", "code")) %>% mutate(valA = valA * mul)
+```
+
+#### data.table
+
+```{r}
+DT3 <- merge(DT1, DT2, all.y = TRUE)[ , "valA" := valA * mul]
+show(DT3) ## je ne comprends pas pourquoi il faut utiliser show pour l'affichage
+```
+
+
+### Question 13
+
+_Add a new column val to DF1 with values from DF2\$mul where DF2\$id, DF2\$code matches with DF1’s. Rows that don’t match should have NA._
+
+#### base
+
+```{r}
+transform(merge(DF1, DF2, by = c("id", "code"), all.x = TRUE, sort = FALSE), mul = mul)
+```
+
+#### dplyr
+
+```{r}
+left_join(TB1, TB2, by = c("id", "code"))
+```
+
+#### data.table
+
+```{r}
+merge(DT1, DT2, all.x = TRUE)
+```
+
