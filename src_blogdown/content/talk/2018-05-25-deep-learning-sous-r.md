@@ -1,5 +1,5 @@
 +++
-date = 2018-02-08  # Schedule page publish date.
+date = 2018-02-06  # Schedule page publish date.
 
 title = "Deep Learning sous R"
 time_start = 2018-05-25T14:00:00

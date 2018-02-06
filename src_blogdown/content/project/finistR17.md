@@ -1,6 +1,6 @@
 +++
 # Date this page was created.
-date = "2018-02-08"
+date = "2018-02-06"
 
 # Project title.
 title = "Mini poly bookdown"

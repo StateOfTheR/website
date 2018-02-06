@@ -1,5 +1,5 @@
 +++
-date = 2018-02-10  # Schedule page publish date.
+date = 2018-02-06  # Schedule page publish date.
 
 title = "Communication Scientifique en R"
 time_start = 2018-02-23T14:00:00
