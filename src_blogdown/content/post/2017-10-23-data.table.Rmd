@@ -3,8 +3,8 @@ title: Exercices autour de data.table
 author: ~
 date: '2017-10-23'
 slug: data.table
-categories: ["R"]
-tags: ["workshop", "package", "tidy", "data.table", "dplyr"]
+categories: ["workshop"]
+tags: ["tidy", "data.table", "dplyr"]
 ---
 
 ```{r setup, include=FALSE}

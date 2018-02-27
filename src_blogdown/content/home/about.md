@@ -48,6 +48,6 @@ Depuis, le groupe s'est consolidé autour d'un réseau méthodologique du dépar
   
 ## Participants depuis septembre 2017
 
-Isabelle Albert, Éric Parent, Maud Delattre, Tristan Mary-huard, Mahendra Mariadassou, Martina Sundqvist, Audrey Hulot
+Isabelle Albert, Antoine Bichat, Maud Delattre, Audrey Hulot, Éric Parent, Tristan Mary-huard, Mahendra Mariadassou, Martina Sundqvist
   
   

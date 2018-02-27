@@ -3,8 +3,8 @@ title: Atelier découverte LearnR
 author: ~
 date: '2017-09-25'
 slug: learnr
-categories: ["R"]
-tags: ["workshop", "package", "teachings"]
+categories: ["workshop"]
+tags: ["learnr", "teachings"]
 ---
 
 ```{r setup, include=FALSE}
