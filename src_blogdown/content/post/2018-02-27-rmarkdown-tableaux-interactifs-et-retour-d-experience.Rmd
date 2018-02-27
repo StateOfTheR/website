@@ -2,18 +2,18 @@
 title: 'Rmarkdown: tableaux interactifs et retour d''expérience'
 author: "Mahendra Mariadassou"
 date: "2018-02-23"
-slug: rmarkdown-tableaux-interactifs-et-retour-d-expérience
+slug: rmarkdown-tableaux-interactifs-et-retour-d-experience
 categories: ["workshop"]
 tags: ["R Markdown", "communication", "DT", "datatable", "kable"]
-header:
-  caption: ''
-  image: ''
 ---
 
 ```{r setup, include=FALSE}
+library(DT)
 knitr::opts_chunk$set(echo = TRUE)
 knitr::opts_knit$set(root.dir = ".")
 ```
+
+[Original slides by Mahendra](http://genome.jouy.inra.fr/~mmariadasso/HappyR/DT_tutorial.html)
 
 # Motivation
 
@@ -40,19 +40,19 @@ $\Rightarrow$ Very useful for **reproducible research** and to **explore data**
 ## Printing data frame: ugly default {.smaller}
 
 ```{r ugly-default}
-iris
+head(iris)
 ```
 
 ## Using kable: much better {.smaller}
 
 ```{r better-df}
-knitr::kable(iris)
+knitr::kable(head(iris))
 ```
 
 ## Using datatable: even better {.smaller}
 
 ```{r pressure}
-DT::datatable(iris)
+DT::datatable(head(iris))
 ```
 
 # The Basics
@@ -100,7 +100,7 @@ We already did it but still...
 </div>
 
 ```{r hello-world}
-datatable(iris)
+DT::datatable(iris)
 ```
 
 ## Your Turn (I)
@@ -108,7 +108,7 @@ datatable(iris)
 Download the example dataset and print it nicely
 
 ```{r your-turn-1}
-data_dir <- "2018-02-27-rmarkdown-tableaux-interactifs-et-retour-d-expérience_data"
+data_dir <- "2018-02-27-rmarkdown-tableaux-interactifs-et-retour-d-experience_data"
 example <- read.csv(file = paste(data_dir,"example_table.csv", sep="/"), dec = ",", stringsAsFactors = FALSE)
 ##  example <- read.csv(file = "http://genome.jouy.inra.fr/~mmariadasso/HappyR/example_table.csv", dec = ",", stringsAsFactors = FALSE)
 ```
