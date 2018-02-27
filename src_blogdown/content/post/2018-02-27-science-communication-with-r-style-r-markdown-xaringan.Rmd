@@ -22,6 +22,7 @@ tags: ["R Markdown", "communication", "DT", "datatable", "kable"]
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_knit$set(root.dir = ".")
 library(tidyverse)
 ```
 
@@ -109,18 +110,18 @@ install.packages("rmarkdown")
 
 ## Create a new `.Rmd`
 
-![Alt](2018-02-27-science-communication-with-r-style-r-markdown-xaringan_data/CreateRmd1.png#left){width=45%}
-![Alt](2018-02-27-science-communication-with-r-style-r-markdown-xaringan_data/CreateRmd2.png#right){width=45%}
+![Alt](../2018-02-27-science-communication-with-r-style-r-markdown-xaringan_data/CreateRmd1.png#left){width=45%}
+![Alt](../2018-02-27-science-communication-with-r-style-r-markdown-xaringan_data/CreateRmd2.png#right){width=45%}
 
 ## New `.Rmd`
 
-![Alt](2018-02-27-science-communication-with-r-style-r-markdown-xaringan_data/CreateRmd3.png#center)
+![Alt](../2018-02-27-science-communication-with-r-style-r-markdown-xaringan_data/CreateRmd3.png#center)
 
 ## Compile `.Rmd`
 
 Use the `Knit` button to produce a HTML file
 
-![Alt](2018-02-27-science-communication-with-r-style-r-markdown-xaringan_data/CreateRmd4.png#center){width=40%}
+![Alt](../2018-02-27-science-communication-with-r-style-r-markdown-xaringan_data/CreateRmd4.png#center){width=40%}
 
 Shortcut: Ctrl + Maj + K
 
@@ -312,7 +313,7 @@ It is developped by Yihui Xie `r icon::fa("github", size = 1)` <a href="https://
 devtools::install_github('yihui/xaringan')
 ```
 
-![Alt](2018-02-27-science-communication-with-r-style-r-markdown-xaringan_data/CreateRmd5.png#center){width=50%}
+![Alt](../2018-02-27-science-communication-with-r-style-r-markdown-xaringan_data/CreateRmd5.png#center){width=50%}
 
 ## How it works?
 
@@ -377,8 +378,8 @@ leaflet() %>% addTiles() %>% setView(2.34822, 48.83976, zoom = 17)
 
 ## Thanks for your attention!
 
-#### `r icon::fa("github", size = 1)` <a href="https://github.com/abichat" target="_blank">@abichat</a>
-<div style = "margin-top: -20px"></div>
-#### `r icon::fa("link", size = 1)` <a href="https://abichat.github.io" target="_blank">abichat.github.io</a>
-<div style = "margin-top: -20px"></div>
-####`r icon::fa("envelope", size = 1)` <a href="mailto:antoine.bichat@mines-nancy.org?subject=Science%20Communication%20with%20R">antoine.bichat@mines-nancy.org</a>
+`r icon::fa("github", size = 1)` <a href="https://github.com/abichat" target="_blank">@abichat</a>
+
+`r icon::fa("link", size = 1)` <a href="https://abichat.github.io" target="_blank">abichat.github.io</a>
+
+`r icon::fa("envelope", size = 1)` <a href="mailto:antoine.bichat@mines-nancy.org?subject=Science%20Communication%20with%20R">antoine.bichat@mines-nancy.org</a>
