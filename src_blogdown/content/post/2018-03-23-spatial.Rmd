@@ -1,0 +1,375 @@
+---
+title: "Investigations Spatiales et Cartographiques"
+author: ~
+date: '2018-03-23'
+slug: spatial
+categories: ["R"]
+tags: ["workshop", "package", "sp"]
+header:
+  caption: ''
+  image: ''
+---
+
+```{r setup, include=FALSE, warning=FALSE}
+knitr::opts_chunk$set(echo = FALSE, collapse = TRUE, warning=FALSE, message=FALSE)
+```
+
+# Introduction
+
+## Les données spatiales et R {.smaller}
+
+Les données spatiales se présentes sous la forme de:
+
+* `vecteurs` (points, vecteurs, lignes, etc)
+
+* `raster` (pixels).
+
+R permet de lire, d'écrire et de manipuler  des données géoréférencées, puis d'en faire l'analyse statistique. Nous avons repérés deux packages de base :
+
+* `sp` - classe de base pour gérér des données spatiales, en particulier vectorisées, mais aussi grilles.
+
+* `raster` - classes et outils pour manipuler des données sous forme raster.
+
+$+$ des outils, divers et variés, en particulier:
+
+- `rgdal`: Interface R pour la library C/C++ de stat spatiales `gdal` (Geospatial Data Abstraction Library)  pour lire et écrire des données spatialisées
+
+- `rgeos`: Interface R de la library `geos` (Geometry Engine Open Source) avec opérations de type ensemblistes
+
+Bien d'autres packages spatiaux sur le CRAN!, voir - [Spatial task view](http://cran.r-project.org/web/views/Spatial.html)
+
+
+## Que fait-on aujourd'hui ?
+
+On étudie les packages **sp** puis **gstat**...puis **spacetime**
+
+Il est possible de bricoler avec l’emploi des commandes uniquement de base de R, telles que data.frame, image, etc....**MAIS** pourquoi utiliser un package?
+
+Accepter de perdre un peu de liberté indisciplinée ?
+
+-  pour travailler et partager avec d’autres collègues,
+-  pour récupérer le travail d’autres collègues.
+-  bénéficier des fondations et des extensions de **sp**
+
+\begin{center}
+  \includegraphics[width=0.3\textwidth]{/post/2018-03-23-spatial/figbookbivand.png}
+\end{center}
+Présentation inspirée des exemples de [ce bouquin](http://asdar-book.org) et du travail réalisé avec le réseau [RESSTE](http://informatique-mia.inra.fr/resste/atelier)
+
+## R n'est pas simplement la calculette du statisticien
+
+```{r calculette, echo = TRUE, warning = FALSE, message = TRUE}
+cars$qspeed <- cut(cars$speed, breaks=quantile(cars$speed), 
+                   include.lowest=TRUE)
+par(mfrow=c(1,2))
+plot(dist ~ speed, data=cars)
+plot(dist ~ qspeed, data=cars)
+par(mfrow=c(1,1))
+```
+
+## Le package sp définit des classes d’objet explicitement spatialisés
+
+```{r C, echo = TRUE, warning = FALSE, message = TRUE}
+library(sp)
+getClass("Spatial")
+```
+
+## Le package sp définit des classes d’objet explicitement spatialisés
+
+- Points avec ou sans data : *SpatialPoints* et *SpatialPointsDataFrame*
+- Pixels avec ou sans data : *SpatialPixels* et *SpatialPixelsDataFrame*
+- Grilles avec ou sans data : *SpatialGrid* et *SpatialGridDataFrame*
+- Lignes avec ou sans data : *SpatialGrid* et *SpatialGridDataFrame*
+- Polygones                : *SpatialPolygons* et *SpatialPolygonsDataFrame*
+
+
+# Spatial et SpatialPoints
+
+## La classe de base: Spatial 
+
+Elle ne possède que 2 *slots*
+
+- un *bounding box* en longitude/latitude
+- un objet de la classe *CRS* (coordinate reference system), par défaut mise à CRS(as.character(NA)) . Voir plus tard ce qu'est un CRS.
+
+```{r classeSpatial2, echo = TRUE, warning = FALSE, message = TRUE}
+library(sp)
+m <- matrix(c(-2,15,10,40), ncol=2, dimnames=list(NULL, c("min", "max")))
+crs <- CRS(projargs=as.character(NA))
+crs
+S <- Spatial(bbox=m, proj4string=crs)
+S
+```
+
+## Pour la suite de l'exposé, on s'appuie sur le jeux de données MEUSE
+
+```{r liredata, echo = TRUE, warning = FALSE, message = TRUE}
+# check for example data
+data(meuse) # mesures de métaux lourds dans la meuse
+str(meuse) # 155 observations et 14 variables
+```
+
+## Spatial points
+On utilise les 2 colonnes du data.frame meuse renseignant les coordonnées géographiques pour en faire un objet  *SpatialPoints*
+
+```{r faireSpatialPoints, echo = TRUE, warning = FALSE, message = TRUE}
+# check for example data
+coords <- SpatialPoints(meuse[, c("x", "y")]) 
+summary(coords)
+```
+## Exercice à vous de jouer
+
+### Merci à Maxime Beauchamp et Laure Malherbe de l'Ineris
+
+\begin{center}
+  \includegraphics[width=1\textwidth]{figINERIS1.png}
+\end{center}
+
+## Exercice à vous de jouer
+
+\begin{center}
+  \includegraphics[width=1\textwidth]{figINERIS3.png}
+\end{center}
+
+## Exercice à vous de jouer
+
+\begin{center}
+  \includegraphics[width=1\textwidth]{figINERIS2.png}
+\end{center}
+
+
+## Exercice 1 ##
+
+Lire les stations de suivi de la pollution atmosphérique en PM10, PM25 , NO2 et O3 dans le fichier **AirBase_v7_stations.csv**. 
+
+Extraire leur coordonnées, jeter les doublons et sélectionner les stations de France métropolitaine. En faire un objet *SpatialPoints* et les représenter. 
+
+```{r solution_exercice1, echo = FALSE}
+AirBase <- read.csv("2018-03-23-spatial/AirBase_v7_stations.csv")
+
+```
+
+
+On pourra extraire un fond de carte de la France par les commandes R suivantes:
+
+```{r fondDeCarte, echo = TRUE, warning = FALSE, message = TRUE}
+library(cshapes)
+cs <- cshp()
+row.names(cs)=paste(as.character(cs$CNTRY_NAME),1:244)
+numfrance=grep('France',row.names(cs)) #=106
+cowcodefrance=cs$COWCODE[106]
+france <- cs[cs$COWCODE==cowcodefrance,]
+```
+
+
+
+<!-- ## Spatial points data frame -->
+<!-- Retour à Meuse. On ajoute aux coordonnées géographiques les données pour en faire un objet  *SpatialPointsDataFrame*. Ca se comporte comme un dataframe! -->
+
+<!-- ```{r faireSpatialPointsDataFrame1, echo = TRUE, warning = FALSE, message = TRUE} -->
+<!-- meuse_sp <- SpatialPointsDataFrame(coords, meuse) -->
+<!-- names(meuse_sp) -->
+<!-- is(meuse_sp) -->
+<!-- is(meuse) -->
+<!-- #str(meuse_sp) -->
+<!-- ``` -->
+
+<!-- On aurait pu faire plus direct: -->
+<!-- ```{r faireSpatialPointsDataFrame2, echo = TRUE, warning = FALSE, message = TRUE} -->
+<!-- meuse_sp2 <- meuse -->
+<!-- coordinates(meuse_sp2) <- ~x+y  -->
+<!-- # str(meuse_sp2) -->
+<!-- is(meuse_sp2) -->
+<!-- ``` -->
+<!-- ## Exercice 2 ## -->
+
+<!-- Lire les données de pollution atmosphérique du 15 juin 2014 en PM10, PM25 , NO2 et O3 pour les stations actives de France métropolitaine dans les fichiers **PM10_20140615.csv**, **PM25_20140615.csv**, **NO2_20140615.csv** et **03_20140615.csv** . Les données manquantes sont codées -999. -->
+
+<!-- On pourra utiliser les packages *tidyR* et *data.table* pour avoir recours à la méthode *merge*. Créer un objet *SpatialPointsDataFrame* contenant les enregistrements géolocalisés de PM10, PM25 , NO2 et O3 pour les stations actives au 15 juin 2014 dont on conservera le type et l'aire.  -->
+
+<!-- ## Recap: ASDAR page 35 -->
+
+<!-- \begin{center} -->
+<!--   \includegraphics[width=1\textwidth]{figSpatialPoints.png} -->
+<!-- \end{center} -->
+
+
+<!-- # SpatialGrids & SpatialPixels -->
+
+
+<!-- ## Spatial grids & pixels -->
+
+<!--   2 representations pour les data sur une grille régulière rectangualire, orientée N-S et E-W: *SpatialPixels* et  *SpatialGrid* -->
+
+<!--   - SpatialPixels comme SpatialPoints, mais avec coordonnées equi-espacées -->
+
+<!--   - SpatialPixelsDataFrame = SpatialPixels+data -->
+
+<!--   - SpatialGridDataFrame = grille entiere et NA où manquantes -->
+
+
+<!-- ```{r faireSpatialPixelsDataFrame1, echo = TRUE, warning = FALSE, message = TRUE} -->
+<!--  data(meuse.grid) -->
+<!--  coords <- SpatialPixels(SpatialPoints(meuse.grid[, c("x","y")])) -->
+<!-- meuse_spx <- SpatialPixelsDataFrame(coords, meuse.grid) -->
+<!-- names(meuse_spx) -->
+<!-- slot(meuse_spx, "grid") -->
+<!-- object.size(meuse_spx)  -->
+<!-- dim(slot(meuse_spx, "data")) -->
+<!-- ``` -->
+
+<!-- ## Spatial grids -->
+
+<!--    On peut convertir un *SpatialPixels* en un *SpatialGrid*, ce qui économise de la place de stockage: -->
+
+<!-- ```{r faireSpatialPixelsDataFrame2, echo = TRUE, warning = FALSE, message = TRUE} -->
+<!-- meuse_sg <- meuse_spx -->
+<!-- fullgrid(meuse_sg) <- TRUE  -->
+<!-- slot(meuse_sg, "grid") -->
+<!-- class(slot(meuse_sg, "grid")) -->
+<!-- object.size(meuse_sg) -->
+<!-- dim(slot(meuse_sg, "data")) -->
+<!-- par(mfrow=c(1,1)) -->
+<!-- ``` -->
+
+<!-- ## Spatial grids -->
+
+<!--  Interpolons par "inverse distance weighting" un objet *SpatialPointsDataFrame*  -->
+
+<!-- ```{r faireSpatialPixelsDataFrame3, echo=TRUE, fig.height=2.5, message=TRUE, warning=FALSE} -->
+<!-- library(gstat) -->
+<!-- meuse_sg$zincIDW <- idw(zinc~1,meuse_sp, meuse_sg)$var1.pred  -->
+<!-- #interpolation par un poids inverse à la distance -->
+<!--     bubble(meuse_sp, "zinc",col = c("white", "orange")) -->
+<!-- ``` -->
+
+<!-- ## Spatial grids -->
+
+<!-- L'interpolation par "inverse distance weighting" d'un objet *SpatialPointsDataFrame* crée un objet *SpatialGridDataFrame*: -->
+
+<!-- ```{r faireSpatialPixelsDataFrame4, echo = TRUE, warning = FALSE, message = TRUE} -->
+<!--     image(meuse_sg,"zincIDW", col= terrain.colors(7)) -->
+<!-- ``` -->
+
+
+<!-- ## Exercice 3 ## -->
+
+<!-- * Lire le champ de pollution atmosphérique du 15 juin 2014 en PM10, PM25 , NO2 et O3 prévues par le code numérique CHIMERE  sur une grille régulière recouvrant la France métropolitaine dans le fichier **chim.20140615.csv**. -->
+<!-- Vérifier que l'écartement entre les points est régulier et le corriger si nécessaire. Faire une représentation graphique du champ de prévisions de PM25 du 15 juin 2014 sur laquelle on pourra tracer le fond de carte des contours de la France métropolitaine. -->
+<!-- Créer un objet *SpatialPixelDataFrame* . Quelle est sa taille? -->
+<!-- Le transformer en un objet *SpatialGridDataFrame*. A-t-on économisé de l'espace de stockage? -->
+
+<!-- * Interpoler par "inverse distance weighting" (en supposant qu'un écart d'un degré de latitude correspond à celui d'un degré de longiture) les observations de PM25 (un objet *SpatialPointsDataFrame* ) sur la grille des previsions Chimère (un objet *SpatialGridDataFrame*). Représenter les erreurs de previsions. -->
+
+<!-- ## Recap ASDAR page 52 -->
+
+<!-- \begin{center} -->
+<!--   \includegraphics[width=1\textwidth]{figSpatialGrids.png} -->
+<!-- \end{center} -->
+
+
+<!-- # SpatialLines & SpatialPolygones -->
+
+
+
+<!-- ## Polygons -->
+<!-- * Un objet *Line* = ensemble de coordonnées 2D sans ordre. Un *Polygon* = *Line* fermée. *Lines*= liste de *Line*. -->
+<!-- * Un objet *SpatialLines* = ensemble de listes de coordonnées 2D avec ordre. Idem pour *SpatialPolygons* -->
+<!-- * *SpatialLinesDataFrame* et  *SpatialPolygonsDataFrame* =+ data.frame dont les lignes associées aux coordonnées. -->
+
+<!-- ## Polygons et leur famille -->
+<!-- Les données meuse du package **sp** contiennent les coordonnées des bords de la rivière. On les transforme en un objet *SpatialPolygons* : -->
+
+<!-- ```{r faireSpatialPolygonsDataFrame1, echo = TRUE, warning = FALSE, message = TRUE} -->
+<!-- data(meuse.riv) -->
+<!-- str(meuse.riv) -->
+<!-- meuse.riv_poly <- SpatialPolygons(list(Polygons(list(Polygon(meuse.riv)), ID = "meuse"))) -->
+<!-- summary(meuse.riv_poly ) -->
+<!-- ``` -->
+<!-- ## *SpatialPolygons* + *SpatialPoints* + *SpatialPixels* -->
+<!-- Le tout ensemble: -->
+
+<!-- ```{r faireSpatialPolygonsDataFrame2, echo=TRUE, message=TRUE, warning=FALSE} -->
+
+<!-- layout(matrix(1:4, 1, 4, byrow = TRUE)) -->
+<!-- par(mar = c(0,0,1,0)) -->
+<!-- #plot(meuse_sp, cex = 0.6) -->
+<!-- is(meuse_sp) -->
+
+<!-- cc = coordinates(meuse_sp) -->
+<!-- meuse.sl = SpatialLines(list(Lines(list(Line(cc)), "mess"))) -->
+<!-- #plot(meuse.sl) -->
+<!-- is(meuse.sl) -->
+
+<!-- #plot(meuse.riv_poly, col = "grey") -->
+<!-- is(meuse.riv_poly) -->
+
+<!-- #image(meuse_spx, col = "grey") -->
+<!-- is(meuse_spx) -->
+
+<!-- ``` -->
+
+<!-- ##  *SpatialPoints* + *SpatialPolygons* + *SpatialPixels* -->
+<!-- Le tout ensemble: -->
+
+<!-- ```{r faireSpatialPolygonsDataFrame3, echo=FALSE, fig.width=3, message=TRUE, warning=FALSE} -->
+<!-- plot(meuse_sp, cex = 0.6) -->
+<!-- title("points") -->
+
+<!-- plot(meuse.sl) -->
+<!-- title("lines") -->
+
+<!-- plot(meuse.riv_poly, col = "grey") -->
+<!-- title("polygons") -->
+
+<!-- image(meuse_spx, col = "grey") -->
+<!-- title("grid") -->
+
+<!-- par(mfrow=c(1,1)) -->
+<!-- ``` -->
+
+<!-- ##  *SpatialPoints* + *SpatialPolygons* + *SpatialPixels* -->
+<!-- Le tout ensemble: -->
+
+<!-- ```{r faireSpatialPolygonsDataFrame4, echo=FALSE, fig.width=6,fig.height=5, message=TRUE, warning=FALSE} -->
+<!-- par(mfrow=c(1,1)) -->
+<!-- image(meuse_spx, col = "grey") -->
+<!-- plot(meuse.riv_poly, col = "blue",add=T) -->
+<!-- plot(meuse_sp, cex = 1.6,add=T) -->
+<!-- box() -->
+
+<!-- ``` -->
+
+<!-- ## Spatial Lines et *ContourLines2SLDF* -->
+
+<!-- ```{r faireContourLines2SLDF1, echo=TRUE, fig.width=3, message=TRUE, warning=FALSE} -->
+<!-- data(volcano) -->
+<!-- #?ContourLines2SLDF -->
+<!-- volcano_sl <- ContourLines2SLDF(contourLines(volcano,nlevels=10))  -->
+<!-- sapply(slot(volcano_sl, "lines"), function(x) length(slot(x, "Lines"))) -->
+<!-- volcano_sl$level -->
+
+
+<!-- col <- terrain.colors(nlevels(volcano_sl$level))  -->
+<!-- # plot(volcano_sl, bg = "grey70", -->
+<!-- # col = col[as.numeric(volcano_sl$level)], lwd = 3) -->
+<!-- ``` -->
+
+<!-- ## Spatial Lines et *ContourLines2SLDF* -->
+
+<!-- ```{r faireContourLines2SLDF2, echo=FALSE, fig.width=6,fig.height=5, message=TRUE, warning=FALSE} -->
+<!-- plot(volcano_sl, bg = "grey70",col = col[as.numeric(volcano_sl$level)], lwd = 3) -->
+<!-- ``` -->
+
+<!-- ## Exercice 4 ## -->
+
+<!-- * Quelle est la nature de l'objet *france* obtenu à partir du package *Cshapes* dans l'exercice 1 ? -->
+
+<!-- * Créer des lignes de niveaux pour les previsions Chimère de PM25. Les transformer en un objet de la famille *SpatialPolygonsDataFrame*. Représenter ces lignes de niveaux sur celles obtenues pour l'interpolation ("IDW" ou "krigeage") obtenue à partir des observations de PM25. -->
+
+<!-- ## Recap ASDAR page 40 -->
+
+<!-- \begin{center} -->
+<!--   \includegraphics[width=1\textwidth]{figSpatialPolygons.png} -->
+<!-- \end{center} -->
+

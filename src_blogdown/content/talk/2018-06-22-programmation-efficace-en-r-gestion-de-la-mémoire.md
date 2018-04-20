@@ -2,8 +2,8 @@
 date = 2018-02-06  # Schedule page publish date.
 
 title = "Programmation efficace en R: gestion de la mémoire"
-time_start = 2018-04-27T14:00:00
-time_end = 2018-04-27T17:00:00
+time_start = 2018-06-22T14:00:00
+time_end = 2018-06-22T17:00:00
 abstract = ""
 abstract_short = ""
 event = "Séverine, Tristan"
