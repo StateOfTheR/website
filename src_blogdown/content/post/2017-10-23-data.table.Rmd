@@ -22,7 +22,7 @@ Pour les animateurs : vous êtes libre de compléter le post de blog. Nous ajout
 
 ### Préliminaires
 
-C'est parti, on charge oles packages requis
+C'est parti, on charge les packages requis
 
 ```{r, message=FALSE}
 library(data.table)

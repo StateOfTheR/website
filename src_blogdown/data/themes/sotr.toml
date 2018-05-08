@@ -1,0 +1,24 @@
+# Theme metadata
+name = "sotr"
+
+# Is theme light or dark?
+light = true
+
+## 2b8cbe
+## a6bddb
+## ece7f2
+
+# Primary
+primary = "#a6bddb"
+primary_light = "#ece7f2"
+primary_dark = "#2b8cbe"
+
+# Menu
+menu_primary = "#2b8cbe" # 500
+menu_text = "#fff"
+menu_text_active = "#a6bddb" # A100
+menu_title = "#fff"
+
+# Home sections
+home_section_odd = "rgb(255, 255, 255)"
+home_section_even = "rgb(247, 247, 247)"
