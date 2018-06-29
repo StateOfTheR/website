@@ -6,7 +6,7 @@ time_start = 2018-07-20T14:00:00
 time_end = 2018-07-20T17:00:00
 abstract = ""
 abstract_short = ""
-event = "Timothée, Mathieu"
+event = "Timothée, Mathieu, Félix"
 event_url = ""
 location = "salle ACTIA, AgroParisTech"
 

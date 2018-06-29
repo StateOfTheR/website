@@ -12,6 +12,8 @@ header:
   image: ''
 ---
 
+<img src="img/headers/TensorFlowLogo.png" align="right" width="200"/>
+
 Sophie et Christophe nous proposent une séance complète sur le deep-learning et l'interfaçage existant sous R:
 
 - [Une brève histoire du Deep-Learning](post/deep_learning/deep-learning-history.html)

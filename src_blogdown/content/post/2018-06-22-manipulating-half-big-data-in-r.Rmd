@@ -1,0 +1,32 @@
+---
+title: Manipulation de (quasi) big data en R
+author: Séverine Bord, Tristan Mary-Huard
+date: '2018-06-22'
+slug: manipulating-half-big-data-in-r
+categories:
+  - workshop
+tags:
+  - sparlyr
+  - data.table
+  - bigdata
+header:
+  caption: ''
+  image: ''
+---
+
+<img src="img/headers/spark-logo-trademark.png" align="right" width="200"/>
+
+Séverine et Tristan nous proposent une introduction à quelques outils permettant de manipuler (en particulier charger) de "grosses" tables de données sous ` R`.
+
+- `bigmemory` for loading large matrices
+- `bigalgebra` provides BLAS and LAPACK linear algebra
+- `sparklyr` for interfacing R with [Spark Apache](http://spark.apache.org/)
+
+
+Les documents de la séances
+
+- [Présentation des enjeux, slides](post/bigdata/BigDataPresentation.html)
+- [travaux pratiques (PDF)](post/bigdata/tutorial_sparklyr.pdf), [source Markdown](post/bigdata/tutorial_sparklyr.Rmd)
+- [code source: R base vs bigxx](post/bigdata/1_CompareClassicalAndBigdata.R)
+- [code source: R base vs sparklyr](post/bigdata/2_CompareClassicalAndSpark.R)
+
