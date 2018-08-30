@@ -19,9 +19,9 @@ weight = 1
 # Call to action button (optional).
 #   Activate the button by specifying a URL and button label below.
 #   Deactivate by commenting out parameters, prefixing lines with `#`.
-#[cta]
-#  url = "./post/getting-started/"
-#  label = '<i class="fa fa-download"></i> Install Now'
+[cta]
+  url = "http://www.github.com/statofther"
+  label = '<i class="fa fa-github"></i> github group'
 +++
 
 Groupe de chercheurs et d'ingénieurs se réunissant pour approfondir leur savoir-faire, perfectionner la diffusion de leurs méthodes statistiques et échanger autour des dernières innovations de `R` et `Rstudio`

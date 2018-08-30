@@ -1,2 +1,5 @@
+src_blogdown/public/
 docs/
 .Rproj.user
+.Rhistory
+.RData
