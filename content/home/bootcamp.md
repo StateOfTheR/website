@@ -4,16 +4,16 @@ widget = "projects"
 active = true
 date = "2016-04-20T00:00:00"
 
-title = "Projets"
+title = "Bootcamp"
 subtitle = ""
 
 # Order that this section will appear in.
-weight = 5
+weight = 6
 
 # Content.
 # Display content from the following folder.
 # For example, `folder = "project"` displays content from `content/project/`.
-folder = "project"
+folder = "bootcamp"
 
 # View.
 # Customize how projects are displayed.
@@ -34,3 +34,4 @@ filter_default = 0
 
 +++
 
+Les ateliers Finist'R sont des _bootcamp_ d'une semaine que nous avons organisés en 2017 et 2018 à Roscoff et à Beg-Meil.

@@ -14,10 +14,10 @@ primary_light = "#ece7f2"
 primary_dark = "#2b8cbe"
 
 # Menu
-menu_primary = "#2b8cbe" # 500
-menu_text = "#fff"
+menu_primary = "#fff" # 500
+menu_text = "#2b8cbe"
 menu_text_active = "#a6bddb" # A100
-menu_title = "#fff"
+menu_title = "#ece7f2"
 
 # Home sections
 home_section_odd = "rgb(255, 255, 255)"

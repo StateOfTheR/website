@@ -3,13 +3,13 @@
 date = "2018-02-06"
 
 # Project title.
-title = "Mini poly bookdown"
+title = "FinistR'17"
 
 # Project summary to display on homepage.
-summary = "Écriture d'un mini poly bookdown résumant les activités de la semaine d'ateliers à Roscoff 2017"
+summary = "Mini poly bookdown résumant les activités de la semaine d'ateliers à Roscoff 2017"
 
 # Optional image to display on homepage (relative to `static/img/` folder).
-image_preview = "headers/bannerSOTR.jpg"
+image_preview = "bootcamp/finistR17.jpg"
 
 # Tags: can be used for filtering projects.
 # Example: `tags = ["machine-learning", "deep-learning"]`

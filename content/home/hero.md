@@ -13,15 +13,23 @@ weight = 1
 #   Deactivate an option by commenting out the line, prefixing it with `#`.
 [header]
   overlay_color = "666"  # An HTML color value.
-  overlay_img = "headers/bannerSOTR-transp.jpg"  # Image path relative to your `static/img/` folder.
+  overlay_img = "headers/bannerSOTR.jpg"  # Image path relative to your `static/img/` folder.
   overlay_filter = 0.1  # Darken the image. Value in range 0-1.
 
 # Call to action button (optional).
 #   Activate the button by specifying a URL and button label below.
 #   Deactivate by commenting out parameters, prefixing lines with `#`.
-[cta]
-  url = "http://www.github.com/statofther"
-  label = '<i class="fa fa-github"></i> github group'
+#[cta]
+#  url = "#member"
+#  label = '<i class="fa fa-github"></i> participer'
 +++
 
-Groupe de chercheurs et d'ingénieurs se réunissant pour approfondir leur savoir-faire, perfectionner la diffusion de leurs méthodes statistiques et échanger autour des dernières innovations de `R` et `Rstudio`
+
+<span style="color:white">
+Groupe de chercheurs et d'ingénieurs se réunissant pour approfondir leur savoir-faire, perfectionner la diffusion de leurs méthodes statistiques et échanger autour des dernières innovations de `R` et `Rstudio`.
+</span>
+
+<a href="http://www.github.com/StateOftheR" class="btn btn-light btn-outline btn-large"><i class="fa fa-github"></i>groupe github</a>
+<a href="mailto:sympa@agroparistech.fr?subject=SUSCRIBE%20stateofther" class="btn btn-light btn-outline btn-large"><i class="fa fa-envelope"></i> liste de diffusion</a>
+<a href="#member" class="btn btn-light btn-outline btn-large"><i class="fa fa-cog"></i> participer ?</a>
+

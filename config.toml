@@ -62,8 +62,8 @@ enableGitInfo = false
 
   # Organizations/Affiliations.
   #   Separate multiple entries with a comma, using the form: `[ {name="Org1", url=""}, {name="Org2", url=""} ]`.
-  organizations = [ { name = "AgroParisTech", url = "http://agroparistech.fr" },
-                    { name = "Inra", url = "http://inra.fr" }]
+  # organizations = [ { name = "AgroParisTech", url = "http://agroparistech.fr" },
+  #                   { name = "Inra", url = "http://inra.fr" }]
 
   gravatar = false  # Get your avatar from Gravatar.com? (true/false)
   avatar = "sticker_sotr.png"  # Specify an avatar image (in `static/img/` folder) or delete value to disable avatar.
@@ -83,7 +83,7 @@ enableGitInfo = false
 
   # Diplay a logo in navigation bar rather than title (optional).
   #   To enable, place an image in `static/img/` and reference its filename below. To disable, set the value to "".
-  logo = "phare.png"
+  logo = "sticker_sotr.png"
 
   # Enable/disable map in Contact widget.
   # To show your address on a map in the contact widget, you need to enter your latitude, longitude and choose
@@ -185,9 +185,9 @@ enableGitInfo = false
   ]
 
   # Configuration of talk pages.
-  [params.talks]
-    # Show talk time?
-    time = true
+#  [params.talks]
+#    # Show talk time?
+#    time = true
 
   # Configuration of publication pages.
 #  [params.publications]
@@ -263,27 +263,40 @@ enableGitInfo = false
 [[menu.main]]
   name = "Accueil"
   url = "#hero"
+  weight = 1
+
+[[menu.main]]
+  name = "Ateliers"
+  identifier = "Ateliers"
   weight = 2
 
 [[menu.main]]
-  name = "Ateliers à venir"
+  name = "à venir"
+  parent = "Ateliers"
   url = "#upcoming_workshops"
   weight = 3
 
 [[menu.main]]
-  name = "Ateliers passés"
+  name = "passés"
+  parent = "Ateliers"
   url = "#past_workshops"
   weight = 4
 
 [[menu.main]]
-  name = "Projets"
-  url = "#projets"
+  name = "bootcamp"
+  parent = "Ateliers"
+  url = "#bootcamp"
   weight = 5
 
 [[menu.main]]
-  name = "A propos"
-  url = "#about"
+  name = "Participants"
+  url = "#members"
   weight = 6
+
+[[menu.main]]
+  name = "À propos"
+  url = "#about"
+  weight = 7
 
 # Link to a PDF of your resume/CV from the menu.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.

@@ -1,27 +1,25 @@
 +++
 # Date this page was created.
-date = "2018-02-06"
+date = "2018-08-31"
 
 # Project title.
-title = "Groupe github"
+title = "FinistR'18"
 
 # Project summary to display on homepage.
-summary = "formation d'un groupe github où sont hébergés nos projets en cours et à venir"
+summary = "Page web résumant les activités de la semaine d'ateliers à Beg Meil 2018"
 
 # Optional image to display on homepage (relative to `static/img/` folder).
-image_preview = ""
+image_preview = "bootcamp/finistR18.jpg"
 
 # Tags: can be used for filtering projects.
 # Example: `tags = ["machine-learning", "deep-learning"]`
-tags = ["git"]
+tags = ["bookdown"]
 
 # Optional external URL for project (replaces project detail page).
-external_link = "https://github.com/StateOfTheR"
+external_link = "http://stateofther.github.io/finistR2018/"
 
 # Does the project detail page use math formatting?
 math = false
 
 +++
-
-
 
