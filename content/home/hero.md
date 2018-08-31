@@ -26,10 +26,10 @@ weight = 1
 
 
 <span style="color:white">
-Groupe de chercheurs et d'ingénieurs se réunissant pour approfondir leur savoir-faire, perfectionner la diffusion de leurs méthodes statistiques et échanger autour des dernières innovations de `R` et `Rstudio`.
-</span>
+Groupe de chercheurs et d'ingénieurs se réunissant pour approfondir leur savoir-faire, perfectionner la diffusion de leurs méthodes statistiques et échanger autour des dernières innovations de `R` et `Rstudio`.</span>
+[en savoir plus](#about)
 
 <a href="http://www.github.com/StateOftheR" class="btn btn-light btn-outline btn-large"><i class="fa fa-github"></i>groupe github</a>
-<a href="mailto:sympa@agroparistech.fr?subject=SUSCRIBE%20stateofther" class="btn btn-light btn-outline btn-large"><i class="fa fa-envelope"></i> liste de diffusion</a>
-<a href="#member" class="btn btn-light btn-outline btn-large"><i class="fa fa-cog"></i> participer ?</a>
+
+<!--<a href="mailto:sympa@agroparistech.fr?subject=SUSCRIBE%20stateofther" class="btn btn-light btn-outline btn-large"><i class="fa fa-envelope"></i> liste de diffusion</a>-->
 

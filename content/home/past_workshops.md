@@ -16,7 +16,15 @@ weight = 4
 #  Filtering example: `tags_include = ["hugo", "academic"]`
 
 ## 
-tags_include = ["learnr", "communication", "data.table", "workshop", "tidy", "deep learning", "spatial", "rcpp"]
+tags_include = ["learnr",
+                "communication",
+                "data.table",
+                "workshop",
+                "tidy",
+                "deep learning",
+                "spatial",
+                "rcpp"]
+                
 tags_exclude = ["help"]
 
 # Number of posts to list.

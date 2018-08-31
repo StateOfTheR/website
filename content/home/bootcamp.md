@@ -34,4 +34,4 @@ filter_default = 0
 
 +++
 
-Les ateliers Finist'R sont des _bootcamp_ d'une semaine que nous avons organisés en 2017 et 2018 à Roscoff et à Beg-Meil.
+Dans le même esprit que les ateliers mensuels, les  _bootcamp_ Finist'R (c) sont des ateliers d'une semaine que nous avons organisés en 2017 et 2018 à Roscoff et à Beg-Meil.

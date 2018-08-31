@@ -21,6 +21,10 @@ En particulier, ils permettent concilier l’écriture scientifique, l’analyse
 Fort de ce constat, le groupe _State of the R_ a vu le jour fin août 2017 au cours d’un atelier d’une semaine à Roscoff. Le groupe
 réunit des utilisateurs quotidiens du logiciel `R`, dans la perspective de partager et d'approfondir les savoir-faire, d’échanger autour des dernières innovations et d'en favoriser la diffusion.  Son objectif majeur est de définir un espace qui permette d’adopter un vocabulaire commun, des pratiques de programmation performantes et des modes de représentation standardisées pour une meilleure généricité des outils statistiques développés par notre communauté.
 
+## Listes des membres
+
+
+
 ## Sponsors
 
 ![AgroParisTech](/img/logo_agro.png) 
@@ -28,15 +32,3 @@ réunit des utilisateurs quotidiens du logiciel `R`, dans la perspective de part
 ![Inra](/img/logo_MIA.png)
 
 ![Inra](/img/logo_INRA.jpg)
-
-<!--  
-
-## Organisation 
-
-Le groupe, animé par Julie Aubert, [Julien Chiquet](http://julien.cremeriefamily.info) et [Marie-Pierre Étienne](https://irmar.univ-rennes1.fr/interlocuteurs/marie-pierre-etienne), se réunit au cours d'ateliers mensuels à AgroParisTech. Les partipants doivent contribuer aux ateliers: pour s'inscire,  
-
-![AgroParisTech](/img/logo_agro.png)
-
-Le groupe s'est consolidé autour d'un réseau méthodologique du département MIA de l'Inra, animé par Julie Aubert, [Julien Chiquet](http://julien.cremeriefamily.info) et Marie-Pierre Étienne. Une 30aine de personnes sont inscrites à la liste de diffusion (AgroParisTech et AgroCampus Ouest, MIA Paris/Jouy LaMME, Institut Curie)
-![Inra](/img/logo_inra.jpg)
--->

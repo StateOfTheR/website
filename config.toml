@@ -228,7 +228,7 @@ enableGitInfo = false
   [[params.social]]
     icon = "envelope"
     icon_pack = "fa"
-    link = "stateofr@gmail.com"
+    link = "mailto:stateofr@gmail.com"
 
 #  [[params.social]]
 #    icon = "twitter"
@@ -266,31 +266,31 @@ enableGitInfo = false
   weight = 1
 
 [[menu.main]]
+  name = "Organisation"
+  url = "#organisation"
+  weight = 2
+
+[[menu.main]]
   name = "Ateliers"
   identifier = "Ateliers"
-  weight = 2
+  weight = 3
 
 [[menu.main]]
   name = "à venir"
   parent = "Ateliers"
   url = "#upcoming_workshops"
-  weight = 3
+  weight = 4
 
 [[menu.main]]
   name = "passés"
   parent = "Ateliers"
   url = "#past_workshops"
-  weight = 4
+  weight = 5
 
 [[menu.main]]
   name = "bootcamp"
   parent = "Ateliers"
   url = "#bootcamp"
-  weight = 5
-
-[[menu.main]]
-  name = "Participants"
-  url = "#members"
   weight = 6
 
 [[menu.main]]
