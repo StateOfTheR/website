@@ -19,7 +19,7 @@ autolink = false
 
 Le groupe se réunit à [AgroParisTech](http://www.agroparistech.fr) au cours d'ateliers mensuels de 3 heures autour d'un thème prédéfini. Chaque atelier est animé par quelques membres (généralement deux ou trois) qui se chargent de présenter les enjeux du thème, fournir le bagage méthodologique nécessaire, et proposer des travaux pratiques. 
 
-Nous pensons qu'il est important que l'ensemble des participants s'investissent dans l'animation pour préserver l'esprit des ateliers. Les places sont donc limités à une trentaine par séance.
+Nous pensons qu'il est important que l'ensemble des participants s'investissent dans l'animation pour préserver l'esprit des ateliers. Les places sont donc limitées à une trentaine par séance.
 
 <a href="#past_workshops" class="btn btn-primary btn-outline btn-large">Voir les ateliers passés </a>
 
@@ -31,4 +31,4 @@ Pour participer à ces ateliers, un aspirant membre peut assister à une séance
 
 ## Animation
 
-La gestion du groupe (site web, liste de diffusion, bootcamp, financement) est assurée par Julie Aubert, [Julien Chiquet](http://julien.cremeriefamily.info) et [Marie-Pierre Étienne](https://irmar.univ-rennes1.fr/interlocuteurs/marie-pierre-etienne). Vous pouvez nous contacter à l'adresse <stateofr@gmail.com>.
+La gestion du groupe (site web, liste de diffusion, bootcamp, recherche de financement, organisation des séances) est assurée par Julie Aubert, [Julien Chiquet](http://julien.cremeriefamily.info) et [Marie-Pierre Étienne](https://irmar.univ-rennes1.fr/interlocuteurs/marie-pierre-etienne). Vous pouvez nous contacter à l'adresse <stateofr@gmail.com>.
