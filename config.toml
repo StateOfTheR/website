@@ -230,10 +230,10 @@ enableGitInfo = false
     icon_pack = "fa"
     link = "mailto:stateofr@gmail.com"
 
-#  [[params.social]]
-#    icon = "twitter"
-#    icon_pack = "fa"
-#    link = "//twitter.com/GeorgeCushen"
+  [[params.social]]
+    icon = "slack"
+    icon_pack = "fa"
+    link = "https://stateofther.slack.com"
 
 #  [[params.social]]
 #    icon = "google-scholar"
