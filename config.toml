@@ -6,7 +6,7 @@
 
 # The URL of your website.
 # End your URL with a `/` trailing slash, e.g. `https://example.com/`.
-baseurl = "/"
+baseurl = "http://stateofther.github.io/"
 
 # Title of your site
 title = "State of The R"

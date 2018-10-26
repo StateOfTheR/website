@@ -23,7 +23,8 @@ tags_include = ["learnr",
                 "tidy",
                 "deep learning",
                 "spatial",
-                "rcpp"]
+                "rcpp", 
+                "ggplot"]
                 
 tags_exclude = ["help"]
 

@@ -16,7 +16,7 @@ header:
 
 Sophie et Christophe nous proposent une séance complète sur le deep-learning et l'interfaçage existant sous R:
 
-- [Une brève histoire du Deep-Learning](post/deep_learning/deep-learning-history.html)
-- [Une introduction au Deep-Learning sous R](post/deep_learning/Deep-with-R.pdf)
-- [travaux pratiques](post/deep_learning/cours_deeplearning_for_dummies.pdf)
+- [Une brève histoire du Deep-Learning](../../post/deep_learning/deep-learning-history.html)
+- [Une introduction au Deep-Learning sous R](../../post/deep_learning/Deep-with-R.pdf)
+- [travaux pratiques](../../post/deep_learning/cours_deeplearning_for_dummies.pdf)
 

@@ -24,8 +24,8 @@ Séverine et Tristan nous proposent une introduction à quelques outils permetta
 
 Les documents de la séances
 
-- [Présentation des enjeux, slides](post/bigdata/Half_Big_Data_handling_with_R.pdf)
-- [travaux pratiques (PDF)](post/bigdata/tutorial_sparklyr.pdf), [source Markdown](post/bigdata/tutorial_sparklyr.Rmd)
-- [code source: R base vs bigxx](post/bigdata/1_CompareClassicalAndBigdata.R)
-- [code source: R base vs sparklyr](post/bigdata/2_CompareClassicalAndSpark.R)
+- [Présentation des enjeux, slides](../../post/bigdata/Half_Big_Data_handling_with_R.pdf)
+- [travaux pratiques (PDF)](../../post/bigdata/tutorial_sparklyr.pdf), [source Markdown](../../post/bigdata/tutorial_sparklyr.Rmd)
+- [code source: R base vs bigxx](../../post/bigdata/1_CompareClassicalAndBigdata.R)
+- [code source: R base vs sparklyr](../../post/bigdata/2_CompareClassicalAndSpark.R)
 
