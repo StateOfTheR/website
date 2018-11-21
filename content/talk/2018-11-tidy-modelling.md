@@ -1,5 +1,5 @@
 +++
-title = "Broom, tidy modelling"
+title = "Modeling in the Tidyverse and applications to metagenomics data"
 date = 2018-11-23T00:00:00  # Schedule page publish date.
 draft = false
 
@@ -8,7 +8,7 @@ draft = false
 time_start = 2018-11-23T14:00:00
 # time_end = 2018-09-10T15:00:00
 
-abstract = ""
+abstract = "Antoine, notre fanatique du `tidyverse`, nous propose de jeter un coup d’oeil à `broom` et `rsample`, des packages de `tidymodels`, pour travailler proprement (aka en format `tibble`) avec les sorties S3 des méthodes statistiques comme `lm` ou `kmeans` et faciliter l’utilisation des méthodes de rééchantillonage."
 abstract_short = ""
 event = "Antoine Bichat"
 event_url = ""
