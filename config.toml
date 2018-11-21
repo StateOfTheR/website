@@ -235,6 +235,11 @@ enableGitInfo = false
     icon_pack = "fa"
     link = "https://stateofther.slack.com"
 
+  [[params.social]]
+    icon = "twitter"
+    icon_pack = "fa"
+    link = "https://twitter.com/RUG_stateofther"
+
 #  [[params.social]]
 #    icon = "google-scholar"
 #    icon_pack = "ai"
