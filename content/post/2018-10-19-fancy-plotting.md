@@ -1,12 +1,14 @@
 ---
 title: Fancy plotting with ggraph, gganimate
-author: Raphaëll Momal, Marie Perrot
+author: Raphaëlle Momal, Marie Perrot
 date: '2018-10-19'
 slug: fancy-plotting
 categories:
   - workshop
 tags: 
   - ggplot
+  - gganimate
+  - ggraph
 header:
   caption: ''
   image: ''
