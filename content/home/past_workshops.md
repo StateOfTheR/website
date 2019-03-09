@@ -26,7 +26,9 @@ tags_include = ["learnr",
                 "rcpp", 
                 "ggplot",
                 "tidymodels",
-                "exams"]
+                "exams", 
+                "bigstatsr",
+                "satrday"]
                 
 tags_exclude = ["help"]
 
