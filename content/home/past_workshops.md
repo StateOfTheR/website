@@ -28,7 +28,9 @@ tags_include = ["learnr",
                 "tidymodels",
                 "exams", 
                 "bigstatsr",
-                "satrday"]
+                "satrday",
+                "packages",
+                "rstan"]
                 
 tags_exclude = ["help"]
 
