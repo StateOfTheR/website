@@ -30,7 +30,8 @@ tags_include = ["learnr",
                 "bigstatsr",
                 "satrday",
                 "packages",
-                "rstan"]
+                "rstan",
+                "plotly"]
                 
 tags_exclude = ["help"]
 
