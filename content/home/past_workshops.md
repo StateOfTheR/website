@@ -31,7 +31,8 @@ tags_include = ["learnr",
                 "satrday",
                 "packages",
                 "rstan",
-                "plotly"]
+                "plotly", 
+                "shiny"]
                 
 tags_exclude = ["help"]
 
