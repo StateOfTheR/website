@@ -32,7 +32,9 @@ tags_include = ["learnr",
                 "packages",
                 "rstan",
                 "plotly", 
-                "shiny"]
+                "shiny",
+                "tidyverse_sequel",
+                "migale"]
                 
 tags_exclude = ["help"]
 
