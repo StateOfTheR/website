@@ -1,35 +1,49 @@
 +++
 # Hero widget.
 widget = "hero"
+headless = true  # This file represents a page section.
 active = true
-date = 2017-10-15
 
 title = "State of The R"
 
 # Order that this section will appear in.
 weight = 1
 
-# Overlay a color or image (optional).
-#   Deactivate an option by commenting out the line, prefixing it with `#`.
-[header]
-  overlay_color = "666"  # An HTML color value.
-  overlay_img = "headers/bannerSOTR.jpg"  # Image path relative to your `static/img/` folder.
-  overlay_filter = 0.1  # Darken the image. Value in range 0-1.
+[design.background]
+  # Apply a background color, gradient, or image.
+  # Uncomment (by removing `#`) an option to apply it.
+  # Choose a light or dark text color by setting `text_color_light`.
+  # Any HTML color name or Hex value is valid.
 
-# Call to action button (optional).
-#   Activate the button by specifying a URL and button label below.
-#   Deactivate by commenting out parameters, prefixing lines with `#`.
-#[cta]
-#  url = "#member"
-#  label = '<i class="fa fa-github"></i> participer'
+  # Background color.
+  # color = "navy"
+  
+  # Background gradient.
+  gradient_start = "#4bb4e3"
+  gradient_end = "#2b94c3"
+  
+  # Background image.
+  image = "headers/bannerSOTR.jpg"  # Name of image in `static/media/`.
+  image_darken = 0.1  # Darken the image? Range 0-1 where 0 is transparent and 1 is opaque.
+  image_size = "cover"  #  Options are `cover` (default), `contain`, or `actual` size.
+  image_position = "center"  # Options include `left`, `center` (default), or `right`.
+  image_parallax = true  # Use a fun parallax-like fixed background effect? true/false
+  
+  # Text color (true=light or false=dark).
+  text_color_light = true
+
+[cta]
+  url = "mailto:sympa@agroparistech.fr?subject=SUSCRIBE%20stateofther"
+  label = "Liste de diffusion"
+  icon_pack = "fab"
+  icon = "r-project"
+
+[cta_alt]
+  url = "#about"
+  label = "En savoir plus"  
 +++
 
-
-<span style="color:white">
+<span style="text-shadow: none;">
 Groupe de chercheurs et d'ingénieurs se réunissant pour approfondir leur savoir-faire, perfectionner la diffusion de leurs méthodes statistiques et échanger autour des dernières innovations de `R` et `Rstudio`.</span>
-[en savoir plus](#about)
 
-<a href="http://www.github.com/StateOftheR" class="btn btn-light btn-outline btn-large"><i class="fa fa-github"></i> groupe github</a> <a href="https://stateofther.slack.com" class="btn btn-light btn-outline btn-large"><i class="fa fa-slack"></i> slack</a>
-
-<!--<a href="mailto:sympa@agroparistech.fr?subject=SUSCRIBE%20stateofther" class="btn btn-light btn-outline btn-large"><i class="fa fa-envelope"></i> liste de diffusion</a>-->
-
+<a href="http://www.github.com/StateOftheR" class="github-button"><script async defer src="https://buttons.github.io/buttons.js"></script> groupe github</a> 

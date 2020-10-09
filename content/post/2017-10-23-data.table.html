@@ -34,8 +34,11 @@ DF2 = data.frame(id = c(3L, 1L, 1L, 2L, 3L),
                  mul = 5:1, stringsAsFactors = FALSE)
 ## corresponding data tibble
 TB1 &lt;- as.tibble(DF1)</code></pre>
-<pre><code>## Warning: `as.tibble()` is deprecated, use `as_tibble()` (but mind the new semantics).
-## This warning is displayed once per session.</code></pre>
+<pre><code>## Warning: `as.tibble()` is deprecated as of tibble 2.0.0.
+## Please use `as_tibble()` instead.
+## The signature and semantics have changed, see `?as_tibble`.
+## This warning is displayed once every 8 hours.
+## Call `lifecycle::last_warnings()` to see where this warning was generated.</code></pre>
 <pre class="r"><code>TB2 &lt;- as.tibble(DF2)
 ## corresponding data tables
 DT1 &lt;- as.data.table(DF1)
@@ -451,13 +454,13 @@ DT1</code></pre>
 ## # Groups:   code [4]
 ##      id code   valA  valB  valC  valD
 ##   &lt;int&gt; &lt;chr&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
-## 1     3 b        NA    NA    NA    NA
-## 2     1 a         6    10    99    10
-## 3     1 a         6    11   117    10
+## 1     1 a         6    10    99    10
+## 2     1 a         6    11   117    10
+## 3     1 c         5    13   160    13
 ## 4     1 a         6    13   153    10
-## 5     1 c         5    13   160    13
-## 6     1 c         5    15   200    13
-## 7     2 c         5    18   260    13
+## 5     1 c         5    15   200    13
+## 6     2 c         5    18   260    13
+## 7     3 b        NA    NA    NA    NA
 ## 8     3 d        NA    NA    NA    NA</code></pre>
 <pre class="r"><code>## inner_join to keep only rows present in tibbles, left_join to keep all rows from TB1
 ## anti_join to keep only rows from TB1 with no matching rows in TB2</code></pre>
@@ -533,13 +536,13 @@ DT1</code></pre>
 ## # Groups:   code [4]
 ##      id code   valA  valB  valC  valD   mul
 ##   &lt;int&gt; &lt;chr&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt;
-## 1     3 b        NA    NA    NA    NA     5
-## 2     1 a        24    10    99    10     4
-## 3     1 a        24    11   117    10     4
+## 1     1 a        24    10    99    10     4
+## 2     1 a        24    11   117    10     4
+## 3     1 c        15    13   160    13     3
 ## 4     1 a        24    13   153    10     4
-## 5     1 c        15    13   160    13     3
-## 6     1 c        15    15   200    13     3
-## 7     2 c        10    18   260    13     2
+## 5     1 c        15    15   200    13     3
+## 6     2 c        10    18   260    13     2
+## 7     3 b        NA    NA    NA    NA     5
 ## 8     3 d        NA    NA    NA    NA     1</code></pre>
 </div>
 <div id="data.table-11" class="section level4">

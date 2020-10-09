@@ -1,27 +1,72 @@
 +++
 # Recent and Upcoming Talks widget.
-widget = "talks"
+widget = "pages"
 active = true
 date = "2018-02-06T00:00:00"
+weight = 3
 
 title = "Ateliers à venir"
 subtitle = ""
 
-# Order that this section will appear in.
-weight = 3
+[content]
+  # Page type to display. E.g. post, talk, or publication.
+  page_type = "talk"
+  
+  # Choose how much pages you would like to display (0 = all pages)
+  count = 5
+  
+  # Choose how many pages you would like to offset by
+  offset = 0
 
-# Number of talks to list.
-count = 10
+  # Page order. Descending (desc) or ascending (asc) date.
+  order = "desc"
 
-# List format.
-#   0 = Simple
-#   1 = Detailed
-list_format = 1
+  # Filter posts by a taxonomy term.
+  [content.filters]
+    tag = ""
+    category = ""
+    publication_type = ""
+    author = ""
+    exclude_featured = false
+    exclude_past = false
+    exclude_future = false
+    
+[design]
+  # Toggle between the various page layout types.
+  #   1 = List
+  #   2 = Compact
+  #   3 = Card
+  #   4 = Citation (publication only)
+  view = 2
+  
+[design.background]
+  # Apply a background color, gradient, or image.
+  #   Uncomment (by removing `#`) an option to apply it.
+  #   Choose a light or dark text color by setting `text_color_light`.
+  #   Any HTML color name or Hex value is valid.
 
+  # Background color.
+  # color = "navy"
+  
+  # Background gradient.
+  # gradient_start = "DeepSkyBlue"
+  # gradient_end = "SkyBlue"
+  
+  # Background image.
+  # image = "background.jpg"  # Name of image in `static/media/`.
+  # image_darken = 0.6  # Darken the image? Range 0-1 where 0 is transparent and 1 is opaque.
+
+  # Text color (true=light or false=dark).
+  # text_color_light = true  
+  
+[advanced]
+ # Custom CSS. 
+ css_style = ""
+ 
+ # CSS class.
+ css_class = ""
 +++
 
-<iframe src="https://calendar.google.com/calendar/embed?showNav=0&amp;showDate=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;height=300&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=62uu3fdqq173b5ne6e6gqbtt9s%40group.calendar.google.com&amp;color=%2323164E&amp;ctz=Europe%2FParis" style="border-width:0" width="400" height="300" frameborder="0" scrolling="no"></iframe>
+<iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Europe%2FParis&amp;src=NjJ1dTNmZHFxMTczYjVuZTZlNmdxYnR0OXNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;color=%239E69AF&amp;showTitle=1&amp;showCalendars=1&amp;mode=AGENDA" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
 
-{{% alert note %}}
 La plupart des ateliers ont lieu dans la salle ACTIA à AgroParisTech.
-{{% /alert %}}
