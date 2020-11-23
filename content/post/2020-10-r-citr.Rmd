@@ -1,0 +1,226 @@
+---
+title: "Gérer des citations bib(La)tex dans un RMarkdown"
+author: "State of the R"
+date: "2020-10-09"
+slug: citr
+categories: ["workshop"]
+bibliography: mybiblio.bib
+nocite: |
+  @GovaertNadif05,@NealHinton99
+---
+  
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library("citr")
+library(bibtex)
+```
+
+
+Source principale : (https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html)
+
+## Lister ses références
+
+### A l'aide d'un fichier de bibliographie
+
+
+Pandoc peut générer automatiquement des citations et une bibliographie dans différents styles. Il suffit de préciser le nom du fichier de bibligraphie en utilisant le champs `bibliography` dans le YAML des métadonnées du document .Rmd. 
+
+Par exemple :
+  
+```{r, eval = FALSE}
+---
+title: "Sample Document"
+output: html_document
+bibliography: bibliography.bib
+---
+  
+```
+
+Dans le yaml du document .Rmd, ajouter `bibliography: nomdufichierbib.extension`.
+Différents formats existent, dont BibLaTeX (`.bib`) et BibTeX (`.bibtex`). Le format CSL-JSON (`.json`) est le format recommandé. Ici nous nous intéressons au format `.bib`.
+
+
+Pour les packages R, les références peuvent être récupérés à l'aide de la commande `citation`. Pour les journaux, livres, il est utile d'utiliser une logiciel de gestions de référence tel que Zotero, Mendeley.
+
+#### Le package bibtex
+
+La fonction `utils::citation` permet de récupérer les citations d'un package particulier, ne fonctionne pas pour plusieurs et de récupérer le code tex grâce à la fonction `utils::toBibtex`.
+
+Permet notamment de générer un fichier bibtex à partir des citations de packages.
+
+Le package `bibtex` [@bibtex] permet d'ajouter facilement les références associées aux packages utilisés dans la session dans notre fichier de `references.bib`.
+
+
+```{r, eval = FALSE}
+# citation
+x <- citation("utils")
+toBibtex(x)
+# utilisation du package bibtex
+write.bib(names(sessionInfo()$otherPkgs), file='mybiblio', append = TRUE)
+```
+
+
+### Directement dans le YAML
+
+Remarque : une alternative possible est de noter ses références directement dans un champs `references` du YAML.
+
+```{r, eval = FALSE}
+---
+  references:
+  - id: fenner2012a
+title: One-click science marketing
+author:
+  - family: Fenner
+given: Martin
+container-title: Nature Materials
+volume: 11
+URL: 'http://dx.doi.org/10.1038/nmat3283'
+DOI: 10.1038/nmat3283
+issue: 4
+publisher: Nature Publishing Group
+page: 261-263
+type: article-journal
+issued:
+  year: 2012
+month: 3
+---
+  ```
+
+## Placement de la bibliographie
+
+Les références sont placées à la fin du document en utilisant un en-tête approprié `# References`.
+Il est possible de forcer la position des références en utilisant `<div id="refs"></div>` si l'on souhaite par exemple placer des annexes après la bibliographie. Même si `<div>` est une marque html, ça fonctionne aussi avec  les .pdf.
+
+```{r, eval = FALSE}
+# References
+
+<div id="refs"></div>
+
+# Appendix
+  
+```
+
+## Citations
+
+### Syntaxe
+
+Les citations se font dans le document à l'aide de la syntaxe `[@` ref1`;` ref2`]`. On peut ajouter des suffixes, numéros de pages etc. si on le souhaite. _Bla bla [see @GMPR18; @Daudin08, pp. 153-155; also @Jaakkola00, section 4.]_. _Bla bla [@Daudin08, pp. 153-155, 158-159 and @Durand12]._
+
+```{r, eval = FALSE}
+Bla bla [see @GMPR18; @Daudin08, pp. 153-155; also @Jaakkola00, section 4.].
+Bla bla [@Daudin08, pp. 153-155, 158-159 and @Durand12].
+Bla bla [@Daudin08; @MariadassouMathias12].
+```
+
+L'utilisation du signe `-` avant le `@` supprimera la mention de l'auteur, cela peut être utile quand l'auteur est mentionné au préalable : _Mariadassou et Mathias disent bla bla [-@MariadassouMathias12]_.
+Si on n'utilise pas les '[]', la référence se fera en ligne sans parenthèse. _@MariadassouMathias12 disent bla bla_.
+
+```{r, eval = FALSE}
+Mariadassou et Mathias disent bla bla [-@MariadassouMathias12].
+# Alternative 1
+[@MariadassouMathias12] disent bla bla.
+# Alternative 2
+@MariadassouMathias12 disent bla bla.
+```
+
+
+### Le style des citations
+
+
+Par défaut, pandoc utilise le format Chicago auteur-date. Pour changer le style, il faut ajouter le champs `csl`. 
+
+```{r, eval = FALSE}
+---
+title: "Sample Document"
+output: html_document
+bibliography: bibliography.bib
+link-citations: true
+csl: biomed-central.csl
+---
+  
+```
+
+
+Pour créer et modifier des styles CSL (http://citationstyles.org/downloads/primer.html). Un dépôt est disponible : (https://github.com/citation-style-language/styles) ou (http://zotero.org/styles).
+
+Par défaut, les citations sont générées par `pandoc-citeproc` et fonctionne pour tous les formats de sorties. Pour une sortie LaTex/PDF, il est possible d'utiliser des packages (ex `natlib`) pour générer les citations.
+
+
+Pour rendre cliquable les liens hypertextes dans les citations, il faut rajouter `link-citations: true` dans le yaml.
+
+## Le addin citr
+
+### Préambule sur les `Addins`
+
+Les `Addins` permettent de se faciliter la vie . Ce sont des fonctions R,  distribuées sous forme de package ou inclues dans des packages et sont disponibles ensuite dans le menu `Addins`. Une liste est disponible [ici] (https://github.com/daattali/addinslist).
+
+Des Addins intéressants : `remedy` pour écrire du markdown, `esquisse` pour faire des ggplots, `colourpicker` pour définir ses palettes de couleur. Il y en a d'intégrer dans les packages (par exemple `gradethis`).
+
+
+### Revenons à nos moutons
+
+L'addin `citr` [@citr] regarde automatiquement dans le fichier de biblio spécifié dans le YAML. Si aucun fichier n'est précisé, l'addin cherche à trouver un fichier .bib dans les fichiers parents. Les noms attendus pour les fichiers parents sont par exemple `c("index.Rmd", "master.Rmd")`. Cela peut être personnalisés
+`options(citr.parent_documents = "my_parent.Rmd"))`.
+
+On peut récupérer des citations avec une date ou un bout de nom, journal, etc...
+```{r, eval = FALSE}
+md_cite("stochastic")
+md_cite("2018")
+md_cite("computational")
+md_cite("Computational")
+```
+Et on peut insérer facilement les citations dans son .rmd en cliquant sur l'addins.
+
+## Les références non citées
+
+### Pour les inclure dans les références
+
+Si l'on souhaite inclure des références de la bibliographie sans les citer dans le corps du texte, il suffit de définir un champs `nocite` dans le fichier de métadata et les mettre à ce niveau-là.
+
+```{r, eval = FALSE}
+---
+nocite: | 
+  @item1, @item2
+...
+```
+Attention au décalage en début de ligne, peut se voir à la couleur dans votre éditeur.
+
+### Rendre ses fichiers de biblio "tidy"
+
+`tidy_bib_file()` permet de supprimer les entrées non nécessaires ou dupliquées dans le fichier de bibliographie.
+
+```{r tidy_bib, eval = FALSE}
+citr::tidy_bib_file(
+  rmd_file = "my_file.Rmd"
+  , messy_bibliography = "mybiblio.bib"
+  , file = "tidy_references.bib"
+)
+```
+
+La liste des références mentionnées dans le document mais non présentes dans le .Rmd est donnée dans le message d'erreur.
+
+
+
+
+# References
+
+<div id="refs"></div>
+
+# Remarques annexes
+
+## Bibtex et Biblatex
+
+Ces deux formats d'export de références bibliographiques fournissent des .bib mais seul Biblatex connaît les pages web. en cas de bibtex, des soucis peuvent apparaitre lors de la mise en forme finale.
+
+Pandoc interprète nativement vos références comme si elles étaient écrites en Biblatex. Si vous les avez exportées en Bibtex, et que vous voulez qu'il les interprète comme telles, il suffit de changer l'extension de votre fichier d'export de .bibtex.
+
+## Zotero
+
+Zotero n'offre pas nativement d'interface pour gérer (configurer, nommer, renommer, verrouiller, etc.) les clés de citations. Il est recommandé pour cela d'installer l'extension Better Bibtex de Zotero. https://retorque.re/zotero-better-bibtex/
+
+## Information sur la session
+
+```{r sessionInfo, eval = TRUE}
+sessionInfo()
+```
+
