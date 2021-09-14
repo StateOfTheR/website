@@ -44,6 +44,6 @@ weight = 1
 +++
 
 <span style="text-shadow: none;">
-Groupe de chercheurs et d'ingénieurs se réunissant pour approfondir leur savoir-faire, perfectionner la diffusion de leurs méthodes statistiques et échanger autour des dernières innovations de `R` et `Rstudio`.</span>
+Groupe de chercheurs et d'ingénieurs se réunissant pour approfondir leur savoir-faire, perfectionner la diffusion de leurs méthodes statistiques et échanger autour des dernières innovations de `R` et `RStudio`.</span>
 
 <a href="http://www.github.com/StateOftheR" class="github-button"><script async defer src="https://buttons.github.io/buttons.js"></script> groupe github</a> 
