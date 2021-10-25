@@ -13,7 +13,7 @@ title = "State of The R"
 # End your URL with a `/` trailing slash, e.g. `https://example.com/`.
 baseurl = "http://stateofther.github.io/"
 
-publishdir =  "website/public"
+publishdir =  "../StateOfTheR.github.io"
 
 # Enter a copyright notice to display in the site footer.
 # To display a copyright symbol, type `&copy;`.
