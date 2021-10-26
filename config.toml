@@ -11,7 +11,9 @@ title = "State of The R"
 
 # The URL of your site.
 # End your URL with a `/` trailing slash, e.g. `https://example.com/`.
-baseurl = "http://stateofther.github.io/"
+#baseurl = "http://stateofther.github.io/"
+
+baseurl = "https://stateofther.netlify.app/"
 
 # publishdir =  "../docs"
 
