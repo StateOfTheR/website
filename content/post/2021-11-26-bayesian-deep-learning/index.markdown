@@ -1,11 +1,11 @@
 ---
-title: bayesian_deep_learning
+title: Practical session - Introduction to Bayesian deep learning in Python
 author: State of the R
 date: '2021-11-26'
 slug: bayesian-deep-learning
 categories: ["workshop"]
 tags: ["bayesian", "deep learning", "Python"]
-subtitle: 'Practical session - Introduction to Bayesian deep learning in Python'
+subtitle: ''
 summary: ''
 authors: []
 lastmod: '2021-11-26T16:03:33+01:00'
@@ -17,7 +17,7 @@ image:
 projects: []
 ---
 
-[Charles Ollion](https://github.com/charlesollion) et Sylvain Le Corff (Heuritech, CMAP) nous ont proposé une session pratique autour de l'apprentissage profond bayésien. 
+[Charles Ollion](https://github.com/charlesollion) et [Sylvain Le Corff](https://sylvainlc.github.io/) (Heuritech, CMAP) nous ont proposé une session pratique autour de l'apprentissage profond bayésien. 
 
  
 Summary   
