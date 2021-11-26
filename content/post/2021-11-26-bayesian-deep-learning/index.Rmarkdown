@@ -31,6 +31,7 @@ Level: basic / intermediate
 Prerequisite: small experience in Python 
 
 Lien vers le [tutoriel](https://colab.research.google.com/github/charlesollion/dlexperiments/blob/master/6-Bayesian-DL/BayesianDeepWine.ipynb)
+et le dépôt [github](https://github.com/charlesollion/dlexperiments/tree/master/6-Bayesian-DL)
 
 Papers
 Weight uncertainty in neural networks aka Bayes by Backprop https://arxiv.org/abs/1505.05424
