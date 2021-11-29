@@ -17,7 +17,7 @@ image:
 projects: []
 ---
 
-[Charles Ollion](https://github.com/charlesollion) et [Sylvain Le Corff](https://sylvainlc.github.io/) (Heuritech, CMAP) nous ont proposé une session pratique autour de l'apprentissage profond bayésien. 
+[Charles Ollion](https://github.com/charlesollion) et [Sylvain Le Corff](https://sylvainlc.github.io/) (CMAP) nous ont proposé une session pratique autour de l'apprentissage profond bayésien. 
 
  
 Summary   
