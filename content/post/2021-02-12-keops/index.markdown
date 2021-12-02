@@ -19,10 +19,10 @@ projects: []
 
 [Ghislain Durif](https://gdurif.perso.math.cnrs.fr/) a animé un premier atelier pratique autour des problèmes de l'optimisation et de leur résolution (résumé ci-dessous) le 12 février 2020.
 
-Les instructions pour installer les différents packages pour les tutoriels sont disponibles [ici] (https://github.com/gdurif/optimizeR#requirements-for-the-tutorials). Il y a 3 fichiers différents : un pour chaque partie.
+Les instructions pour installer les différents packages pour les tutoriels sont disponibles [ici](https://github.com/gdurif/optimizeR#requirements-for-the-tutorials). Il y a 3 fichiers différents : un pour chaque partie.
 
 Les packages **{SPAMS}** et **{KeOps}** ne sont pas fonctionnels sous Windows.
-On vous recommande d'installer et d'utiliser WSL (Windows Subsystem for Linux) et d'y installer une distribution Linux quelconque (Ubuntu au hasard), tout est très bien détaillé [ici] (https://lecrabeinfo.net/installer-wsl-windows-subsystem-for-linux-sur-windows-10.html).
+On vous recommande d'installer et d'utiliser WSL (Windows Subsystem for Linux) et d'y installer une distribution Linux quelconque (Ubuntu au hasard), tout est très bien détaillé [ici](https://lecrabeinfo.net/installer-wsl-windows-subsystem-for-linux-sur-windows-10.html).
 
 Description de l'atelier :
 
