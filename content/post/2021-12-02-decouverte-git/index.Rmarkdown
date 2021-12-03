@@ -28,7 +28,7 @@ Vous voulez vous aussi parler le git couramment, "_pusher_", "_puller_", "_commi
 
 - Avoir un compte GitHub (https://github.com)
 
-- Avoir installé Git (https://git-scm.com/book/fr/v2/Démarrage-rapide-Installation-de-Git)
+- Avoir installé Git (https://git-scm.com/book/fr/v2/D%C3%A9marrage-rapide-Installation-de-Git)
 
 ### Contenu de la séance
 
@@ -36,7 +36,7 @@ Le support introductif est téléchargeable [ici](Pr_sentation_HappyR_Git-2) et 
 
 ### En complément
 
-#### Quelques commandes linux :
+#### <u> Quelques commandes linux </u>
 
 | Commande | Signification |
 |-------:|:-------|
@@ -46,7 +46,7 @@ Le support introductif est téléchargeable [ici](Pr_sentation_HappyR_Git-2) et 
 | rm monfichier |  suppression (remove) du fichier monfichier | 
 | mkdir monrepertoire |  création du répertoire monrepertoire | 
 
-#### "J'ai un pb avec git clone en https":"
+#### <u> "J'ai un pb avec git clone en https" </u>
 
 - Creating a personal access token
 aller dans settings/developper settings/personal access token/ 
