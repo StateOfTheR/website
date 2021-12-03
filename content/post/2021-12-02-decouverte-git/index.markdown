@@ -48,10 +48,16 @@ Le support introductif est téléchargeable [ici](Pr_sentation_HappyR_Git-2) et 
 
 #### "J'ai un pb avec git clone en https":"
 
-https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-toke
-
+- Creating a personal access token
 aller dans settings/developper settings/personal access token/ 
 generate new token 
 donner en Note le nom de son ordi...
+
+https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-toke
+
+- Passer en ssh
+
+Notamment pour certaines versions de MACOS qui ne donnent pas le choix. Dans ce cas, il faut un compte Github avec authentification ssh. cf. https://www.atlassian.com/git/tutorials/git-ssh pour l'installation d'une clé ssh. (Et merci Marie-Pierre !)
+
 
 
