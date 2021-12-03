@@ -32,11 +32,11 @@ Vous voulez vous aussi parler le git couramment, "_pusher_", "_puller_", "_commi
 
 ### Contenu de la séance
 
-Le support introductif est téléchargeable [ici](Pr_sentation_HappyR_Git-2) et le tutoriel de découverte  [là](../../post/decouverte_git/TutoGit.pdf).
+Le support introductif est téléchargeable [ici](../../post/decouverte_git/PresentationHappyRGit.pdf) et le tutoriel de découverte  [là](../../post/decouverte_git/TutoGit.pdf).
 
 ### En complément
 
-#### <u> Quelques commandes linux </u>
+#### _Quelques commandes linux_
 
 | Commande | Signification |
 |-------:|:-------|
@@ -46,9 +46,10 @@ Le support introductif est téléchargeable [ici](Pr_sentation_HappyR_Git-2) et 
 | rm monfichier |  suppression (remove) du fichier monfichier | 
 | mkdir monrepertoire |  création du répertoire monrepertoire | 
 
-#### <u> "J'ai un pb avec git clone en https" </u>
+#### _"J'ai un pb avec git clone en https"_
 
 - Creating a personal access token
+
 aller dans settings/developper settings/personal access token/ 
 generate new token 
 donner en Note le nom de son ordi...
