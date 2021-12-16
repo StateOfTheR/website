@@ -17,7 +17,7 @@ image:
 projects: []
 ---
 
-EricAdjakossa et Tâm Le Minh ont animé un atelier pratique de découverte de git :
+Eric Adjakossa et Tâm Le Minh ont animé un atelier pratique de découverte de git :
 
  **Apprendre à utiliser Git pour profiter des nombreux avantages qu'il offre, y compris l'organisation efficace d'un travail collaboratif.**
 
