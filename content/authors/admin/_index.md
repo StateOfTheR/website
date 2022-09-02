@@ -89,12 +89,18 @@ Dans ce contexte, `R`/`RStudio` sont nos références car nous pensons qu'ils so
 
 Fort de ce constat, le groupe _State of the R_ a vu le jour fin août 2017 au cours d'un atelier "bootcamp" d'une semaine à Roscoff réunissant une dizaine de personnes. Sa liste de diffusion comporte désormais une soixantaine d'inscrits. Le groupe, devenu réseau méthodologique Mathématiques et Numérique (MathNum) en 2018, réunit des utilisateurs quotidiens du logiciel `R`/`RStudio`, dans la perspective de partager et d'approfondir les savoir-faire, d’échanger autour des dernières innovations et d'en favoriser la diffusion.  Son objectif majeur est de définir un espace qui permette d’adopter un vocabulaire commun, des pratiques de programmation performantes et des modes de représentation standardisées pour une meilleure généricité des outils statistiques développés par notre communauté.
 
-<!--
+
 ## Sponsors
+<table><tr>
+<td> <img src="/media/Logo-INRAE.jpg"  alt="INRAE" width="40%" height="40%"> </td>
+<td> <img src="/media/logotype-mathnum-couleur449x84.png" alt="DEPT MathNum" width="40%" height="40%"> </td>
+</tr></table>
+<!--
+![INRAE](/media/Logo-INRAE.jpg)
 
 ![AgroParisTech](/img/logo_agro.png) 
 
-![Inra](/img/logo_MIA.png)
 
-![Inra](/img/logo_INRA.jpg)
+
+![MathNum](/img/logo_MathNum.jpg)
 -->

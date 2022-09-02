@@ -41,7 +41,7 @@ pour ajouter lieu et année
 
 - créer un dossier `finistRAA` dans `website>content>project`
 
-- ajouter dans le dossier la photo de groupe ainsi qu'un fichier `index.md`
+- ajouter dans le dossier (i) la photo de groupe (nommer le fichier featured.jpg)et (ii) un fichier `index.md`
 
 ## Remarques :
 
