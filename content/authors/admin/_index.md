@@ -92,8 +92,8 @@ Fort de ce constat, le groupe _State of the R_ a vu le jour fin août 2017 au co
 
 ## Sponsors
 <table><tr>
-<td> <img src="/media/Logo-INRAE.jpg"  alt="INRAE" width="40%" height="40%"> </td>
-<td> <img src="/media/logotype-mathnum-couleur449x84.png" alt="DEPT MathNum" width="40%" height="40%"> </td>
+<td> <img src="/media/Logo-INRAE.jpg"  alt="INRAE" width="50%" height="50%"> </td>
+<td> <img src="/media/logotype-mathnum-couleur449x84.png" alt="DEPT MathNum" width="50%" height="50%"> </td>
 </tr></table>
 <!--
 ![INRAE](/media/Logo-INRAE.jpg)

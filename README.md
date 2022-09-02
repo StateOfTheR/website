@@ -50,3 +50,7 @@ pour ajouter lieu et année
 -   pour l'arrêter : `blogdown::stop_server()`
 
 -   Pour récuperer uniquement le code R d'un rmarkdown: `knit::purl()`
+
+## Modifier la partie 'A propos'
+
+- Aller dans le fichier website > content > authors > admin > _index.md
