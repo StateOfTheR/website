@@ -31,8 +31,7 @@
   weight = 5
 
 [[main]]
-  name = "bootcamp"
-  parent = "Ateliers"
+  name = "Camps d'été"
   url = "#bootcamp"
   weight = 6
 
