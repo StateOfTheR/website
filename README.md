@@ -39,9 +39,11 @@ Et dans qqs instants le site sera mis à jour automatiquement.
 - Mettre à jour le fichier `website>content>home>bootcamp.md`
 pour ajouter lieu et année
 
-- créer un dossier `finistRAA` dans `website>content>project`
+- créer un dossier `finistRAA` et fichier `index.md` dans `website>content>project` avec la commande  `blogdown::new_content("project/finistRAA/index.md")`
 
-- ajouter dans le dossier (i) la photo de groupe (nommer le fichier featured.jpg)et (ii) un fichier `index.md`
+- ajouter dans le dossier la photo de groupe (nommer le fichier featured.jpg)
+
+Si on le fait à la main, fonctionne en local mais pas une fois le site déployé.
 
 ## Remarques :
 
