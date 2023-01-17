@@ -33,7 +33,7 @@ weight = 1
   text_color_light = true
 
 [cta]
-  url = "mailto:sympa@agroparistech.fr?subject=SUSCRIBE%20stateofther"
+  url = "mailto:sympa@agroparistech.fr?subject=SUBSCRIBE%20stateofther"
   label = "Liste de diffusion"
   icon_pack = "fab"
   icon = "r-project"
@@ -44,6 +44,6 @@ weight = 1
 +++
 
 <span style="text-shadow: none;">
-Groupe de chercheurs et d'ingénieurs se réunissant pour approfondir leur savoir-faire, perfectionner la diffusion de leurs méthodes statistiques et échanger autour des dernières innovations de `R` et `RStudio`.</span>
+Groupe de chercheurs et d'ingénieurs se réunissant pour approfondir leur savoir-faire, perfectionner la diffusion de leurs méthodes statistiques et échanger autour des dernières innovations de `R` et `RStudio` ou autres outils utiles.</span>
 
 <a href="http://www.github.com/StateOftheR" class="github-button"><script async defer src="https://buttons.github.io/buttons.js"></script> groupe github</a> 
