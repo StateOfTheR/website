@@ -23,13 +23,19 @@ projects: []
 
 ### Content
 
-[Automated Differentiation slides](../../post/rentree2022/AutomatedDifferentiation.pdf).
+#### Automated Differentiation
+[Slides](../../post/rentree2022/AutomatedDifferentiation.pdf).
+[TP](../../post/rentree2022/AutoDiff.R).
 
-[Mini-bach Gradient Descent slides](../../post/rentree2022/MiniBatchGD.pdf).
+#### Mini-bach Gradient Descent
+[Slides](../../post/rentree2022/MiniBatchGD.pdf).
+[TP](../../post/rentree2022/MiniBatchGradientDescent.R).
 
-[Variational AutoEncoder slides](../../post/rentree2022/vae.pdf).
+#### Variational AutoEncoder
+[Slides](../../post/rentree2022/vae.pdf).
+[TP](../../post/rentree2022/VAENetworkStructure.R).
 
-#### Practical Part
+#### Data
 
 [Training data in .rds](../../post/rentree2022/training.rds)
 [Test  data in .rds](../../post/rentree2022/test.rds)
