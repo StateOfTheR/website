@@ -27,4 +27,10 @@ projects: []
 
 [Mini-bach Gradient Descent slides](../../post/rentree2022/MiniBatchGD.pdf).
 
+[Variational AutoEncoder slides](../../post/rentree2022/VAE.pdf).
+
+#### Practical Part
+
+[Training data in .rds](../../post/rentree2022/training.rds)
+[Test  data in .rds](../../post/rentree2022/test.rds)
 
