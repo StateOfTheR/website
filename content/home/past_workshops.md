@@ -7,7 +7,6 @@ headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
 date = "2018-02-06T00:00:00"
 
-
 title = "Ateliers passés"
 subtitle = ""
 
