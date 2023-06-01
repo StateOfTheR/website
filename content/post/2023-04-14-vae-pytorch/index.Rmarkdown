@@ -1,0 +1,50 @@
+---
+title: Variational AutoEncoder with PyTorch
+author: State of the R
+date: '2023-04-14'
+slug: vae-pytorch
+categories: ["workshop"]
+bibliography: biblio.bib
+tags: ["Python", "VAE", "PyTorch"]
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2023-06-01T15:56:44+02:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+
+Hugo Gangloff nous a concocté une séance sur l'utilisation des auto-encodeurs variationnels pour le traitement de données single-cell RNA-Seq en Python avec PyTorch.
+
+Résumé :
+
+Cet atelier Happy R est divisé en trois parties dédiées aux autoencodeurs variationnels (VAE) [@KingmaWelling2014] pour le traitement de données scRNA-seq. Nous abordons des concepts de base mais également des concepts plus avancés en deuxième partie de session.
+
+1) Nous débutons par la reproduction pas à pas d'architectures simples de VAE avec comme objectif l'application à l'identification de cellules via une analyse de l'espace latent du modèle (voir par exemple [@zhao20c])
+
+2) Nous étudions ensuite le reparametrization trick [@KingmaWelling2014; @JangGP17], technique de calcul au coeur des modèles de VAE.
+
+3) Nous codons enfin un Gaussian Mixture VAE, semblable à celui proposé dans [@Gronbech2020].
+
+Le langage de programmation utilisé est Python et la librairie d'apprentissage profond est Pytorch. 
+
+## Part 0: Set-up the Python environment
+
+
+
+    Create a new Anaconda environment conda create --name VAE_HappyR_2023 python=3.10
+    Activate the environment conda activate VAE_HappyR_2023
+    Install the required packages pip install torch jupyter jupyter-cache scanpy
+    Clone the repository git clone git@forgemia.inra.fr:mia-paris/formations/vae_happyr_2023.git
+
+## Contenu
+
+Le dépôt de l'atelier est sur la forgemia https://forgemia.inra.fr/mia-paris/formations/vae_happyr_2023
+
+## References
+
