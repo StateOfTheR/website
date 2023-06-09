@@ -36,7 +36,7 @@ Cette séance sous forme d'atelier a pour objectif de tester différents package
 
 Le package [gllvm-package; @gllvm-packageMEE] utilise l'implémentation d'une méthode variationnelle via `{TMB}` [@TMB] ou une méthode de Laplace d'approximation pour l'estimation. Pour plus de détails, allez voir @Niku2021; @Niku2019.
 
--   `{Hmsc}` : [Hierarchical Modelling of Species Communities (HMSC)](https://cran.r-project.org/package=Hmsc) 
+    -   `{Hmsc}` : [Hierarchical Modelling of Species Communities (HMSC)](https://cran.r-project.org/package=Hmsc) 
 
 is a model-based approach for analyzing community ecological data [@Hmsc] (Ovaskainen et a.2017a). 
 
@@ -53,10 +53,6 @@ Données publiées [sur zenodo](https://zenodo.org/record/3770339)
 
 [Données pieds d'arbre 2009-2012](../../post/multivariatedata/dataPiedsArbres_2009_2012.Rdata)
 [Données pieds d'arbre 2014-2018](../../post/multivariatedata/dataPiedsArbres_2014_2018.Rdata)
-
-#### Autres données
-
-
 
 
 ## References
