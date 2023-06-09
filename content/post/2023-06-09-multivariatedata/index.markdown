@@ -30,9 +30,9 @@ Bastien Batardière nous présente le package python `{pyPLNmodels}`, conçu sp�
 
 Cette séance sous forme d’atelier a pour objectif de tester différents packages permettant de traiter des données de présence/absence ou d’abondance multivariées notamment en écologie, comme (liste non exhaustive)
 
-- Packages R
+#### Packages R
 
-  - `{gllvm}` : [Generalized Linear Latent Variable Models package](https://cran.r-project.org/package=gllvm)
+    -   `{gllvm}` : [Generalized Linear Latent Variable Models package](https://cran.r-project.org/package=gllvm)
 
 Le package \[gllvm-package; Niku, Hui, et al. (2019)\] utilise l’implémentation d’une méthode variationnelle via `{TMB}` (Kristensen et al. 2016) ou une méthode de Laplace d’approximation pour l’estimation. Pour plus de détails, allez voir Niku et al. (2021); Niku, Brooks, et al. (2019).
 
@@ -40,11 +40,20 @@ Le package \[gllvm-package; Niku, Hui, et al. (2019)\] utilise l’implémentati
 
 is a model-based approach for analyzing community ecological data (Tikhonov et al. 2022) (Ovaskainen et a.2017a).
 
-- Données Présence/Absence
+#### Données Présence/Absence
 
 Nous aurons au moins un jeu de données à disposition du type présence de différentes espèces de plantes sur différentes périodes sur différentes sites, accompagnées de covariables définissant le site.
 
 Nous pourrons utiliser les données exemples du chapitre [Modèles à facteurs latents, un outil de réduction de dimension pour les modèles de distribution d’espèce joints](https://oliviergimenez.github.io/code_livre_variables_cachees/bystrova.html) à récupérer dans [ici](https://github.com/oliviergimenez/code_livre_variables_cachees/tree/master/dat)
+
+#### Données pieds d’arbre
+
+Données publiées [sur zenodo](https://zenodo.org/record/3770339)
+
+[Données pieds d’arbre 2009-2012](../../post/multivariatedata/dataPiedsArbres_2009_2012.Rdata)
+[Données pieds d’arbre 2014-2018](../../post/multivariatedata/dataPiedsArbres_2014_2018.Rdata)
+
+#### Autres données
 
 ## References
 
