@@ -26,17 +26,19 @@ Bastien Batardière nous présente le package python `{pyPLNmodels}`, conçu sp�
 
 -   Le github: <https://github.com/PLN-team/pyPLNmodels>
 
+Utiliser le Getting_started.ipynb et c'est parti !
+
 ## Atelier
 
 Cette séance sous forme d'atelier a pour objectif de tester différents packages permettant de traiter des données de présence/absence ou d'abondance multivariées notamment en écologie, comme (liste non exhaustive)
 
 ####   Packages R
 
-    -   `{gllvm}` : [Generalized Linear Latent Variable Models package](https://cran.r-project.org/package=gllvm)
+    - `{gllvm}` : [Generalized Linear Latent Variable Models package](https://cran.r-project.org/package=gllvm)
 
 Le package [gllvm-package; @gllvm-packageMEE] utilise l'implémentation d'une méthode variationnelle via `{TMB}` [@TMB] ou une méthode de Laplace d'approximation pour l'estimation. Pour plus de détails, allez voir @Niku2021; @Niku2019.
 
-    -   `{Hmsc}` : [Hierarchical Modelling of Species Communities (HMSC)](https://cran.r-project.org/package=Hmsc) 
+    - `{Hmsc}` : [Hierarchical Modelling of Species Communities (HMSC)](https://cran.r-project.org/package=Hmsc) 
 
 is a model-based approach for analyzing community ecological data [@Hmsc] (Ovaskainen et a.2017a). 
 
