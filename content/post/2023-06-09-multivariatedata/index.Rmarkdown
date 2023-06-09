@@ -20,13 +20,15 @@ projects: []
 
 ## Présentation de `{pyPLNmodels}`
 
-Bastien Batardière nous présente le package python `{pyPLNmodels}`, conçu spécifiquement pour l'analyse de données de comptage. Ce package repose sur les modèles PLN et PLN-PCA \[\@PLNPCA; \@PLNmodels\], qui font l'hypothèse d'une couche latente gaussienne. Grâce aux lois a posteriori, il permet d'extraire cette couche gaussienne et d'effectuer une ACP probabiliste adaptée aux données de comptage. Le package est accompagné d'un ensemble d'outils de visualisation pour faciliter l'interprétation des résultats.
+Bastien Batardière nous présente le package python `{pyPLNmodels}`, conçu spécifiquement pour l'analyse de données de comptage. Ce package repose sur les modèles PLN et PLN-PCA [@PLNPCA; @PLNmodels], qui font l'hypothèse d'une couche latente gaussienne. Grâce aux lois a posteriori, il permet d'extraire cette couche gaussienne et d'effectuer une ACP probabiliste adaptée aux données de comptage. Le package est accompagné d'un ensemble d'outils de visualisation pour faciliter l'interprétation des résultats.
 
 -   Le package: <https://pypi.org/project/pyPLNmodels/>
 
 -   Le github: <https://github.com/PLN-team/pyPLNmodels>
 
-Utiliser le Getting_started.ipynb et c'est parti !
+Utilisez le Getting_started.ipynb et c'est parti !
+
+Le support introductif est [ici](../../post/multivariatedata/main.pdf)
 
 ## Atelier
 
@@ -36,11 +38,11 @@ Cette séance sous forme d'atelier a pour objectif de tester différents package
 
 -   `{gllvm}` : [Generalized Linear Latent Variable Models package](https://cran.r-project.org/package=gllvm)
 
-Le package \[gllvm-package; \@gllvm-packageMEE\] utilise l'implémentation d'une méthode variationnelle via `{TMB}` \[\@TMB\] ou une méthode de Laplace d'approximation pour l'estimation. Pour plus de détails, allez voir \@Niku2021; \@Niku2019.
+Le package [gllvm-package; @gllvm-packageMEE] utilise l'implémentation d'une méthode variationnelle via `{TMB}` [@TMB] ou une méthode de Laplace d'approximation pour l'estimation. Pour plus de détails, allez voir @Niku2021; @Niku2019.
 
 -   `{Hmsc}` : [Hierarchical Modelling of Species Communities (HMSC)](https://cran.r-project.org/package=Hmsc)
 
-is a model-based approach for analyzing community ecological data \[\@Hmsc\] (Ovaskainen et a.2017a).
+is a model-based approach for analyzing community ecological data [@Hmsc] (Ovaskainen et a.2017a).
 
 #### Données Présence/Absence
 
