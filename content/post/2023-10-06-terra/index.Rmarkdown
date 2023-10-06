@@ -4,7 +4,7 @@ author: State of the R
 date: '2023-10-06'
 slug: terra
 categories: ["workshop"]
-tags: ["R3=", "terra", "spatial"]
+tags: ["R", "terra", "spatial"]
 subtitle: ''
 summary: ''
 authors: []
@@ -29,4 +29,4 @@ Packages R à installer :
 
 terra, ggplot2, tidyterra, dplyr, geodata, gridExtra et ggspatial
 
-[TP](../../post/rentree2022/MiniBatchGradientDescent.R)
+[TP](../../post/terra/TP_terra.qmd).

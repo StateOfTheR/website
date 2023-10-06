@@ -29,4 +29,4 @@ Packages R à installer :
 
 terra, ggplot2, tidyterra, dplyr, geodata, gridExtra et ggspatial
 
-[TP](../../post/rentree2022/MiniBatchGradientDescent.R)
+[TP](../../post/terra/TP_terra.qmd).
