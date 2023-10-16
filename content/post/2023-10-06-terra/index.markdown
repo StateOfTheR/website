@@ -4,7 +4,7 @@ author: State of the R
 date: '2023-10-06'
 slug: terra
 categories: ["workshop"]
-tags: ["R3=", "terra", "spatial"]
+tags: ["R", "terra", "spatial"]
 subtitle: ''
 summary: ''
 authors: []
