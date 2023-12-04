@@ -3,7 +3,7 @@
 widget = "pages"
 active = true
 date = "2018-02-06T00:00:00"
-weight = 3
+weight = 1
 
 title = "Ateliers à venir"
 subtitle = ""
