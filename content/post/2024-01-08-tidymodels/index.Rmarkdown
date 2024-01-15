@@ -1,8 +1,8 @@
 ---
-title: tidymodels
+title: Créer un pipeline complet pour en apprentissage automatique avec {tidymodels}
 author: State of the R
 date: '2023-12-08'
-slug: tidymodels
+slug: tidymodelspipeline
 categories: ["workshop"]
 tags: ["R", "tidymodels", "tidyverse", "glmnet", "ranger", "xgboost", "recipes", "parsnip", "finetune", "workflowsets", "rsample", "yardstick", "tune"]
 subtitle: ''
@@ -28,8 +28,7 @@ Antoine Bichat et Julie Aubert ont rejoué le tutoriel donné aux [rencontres R 
 Pour profiter au maximum de ce tutoriel, merci de vérifier que vous avez une version de R >= 4.1 [disponible ici](https://cran.r-project.org), une version récente de [RStudio](https://www.rstudio.com/download) et d'installer au préalable les packages R utiles à l'aide de la commande suivante :
 
 
-```{r}
-# eval: false
+```{r, eval = FALSE}
 install.packages(c("tidyverse", "tidymodels", 
                    "glmnet", "ranger", "xgboost", 
                    "finetune", "workflowsets", "corrr", "vip", 
