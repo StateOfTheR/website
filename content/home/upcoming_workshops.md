@@ -70,3 +70,4 @@ subtitle = ""
 <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Europe%2FParis&amp;src=NjJ1dTNmZHFxMTczYjVuZTZlNmdxYnR0OXNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;color=%239E69AF&amp;showTitle=1&amp;showCalendars=1&amp;mode=AGENDA" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
 
 Les ateliers ont doréanavant lieu sur le campus AgroParisTech de Palaiseau, 22 place de l'Agronomie.
+
