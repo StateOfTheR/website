@@ -3,7 +3,7 @@ title: Créer un pipeline complet pour en apprentissage automatique avec {tidymo
 author: State of the R
 date: '2023-12-08'
 slug: tidymodelspipeline
-categories: ["workshop"]
+categories: ["HappyR", "workshop"]
 tags: ["R", "tidymodels", "tidyverse", "glmnet", "ranger", "xgboost", "recipes", "parsnip", "finetune", "workflowsets", "rsample", "yardstick", "tune"]
 subtitle: ''
 summary: ''
