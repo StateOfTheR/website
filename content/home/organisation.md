@@ -31,4 +31,4 @@ Pour participer à ces ateliers, un aspirant membre peut assister à une séance
 
 ## Animation
 
-La gestion du groupe (site web, liste de diffusion, bootcamp, recherche de financement, organisation des séances) est assurée par [Julie Aubert](https://www6.inrae.fr/mia-paris/Equipes/Membres/Julie-Aubert), [Julien Chiquet](https://www6.inrae.fr/mia-paris/Equipes/Membres/Julien-Chiquet) et [Marie-Pierre Étienne](https://irmar.univ-rennes1.fr/interlocuteurs/marie-pierre-etienne). Vous pouvez nous contacter à l'adresse <stateofr@gmail.com>.
+La gestion du groupe (site web, liste de diffusion, bootcamp, recherche de financement, organisation des séances) est principalement assurée par [Julie Aubert](https://www6.inrae.fr/mia-paris/Equipes/Membres/Julie-Aubert). N'hésitez pas à la contacter.
