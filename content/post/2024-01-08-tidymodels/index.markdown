@@ -3,7 +3,7 @@ title: Créer un pipeline complet pour en apprentissage automatique avec {tidymo
 author: State of the R
 date: '2023-12-08'
 slug: tidymodelspipeline
-categories: ["workshop"]
+categories: ["HappyR", "workshop"]
 tags: ["R", "tidymodels", "tidyverse", "glmnet", "ranger", "xgboost", "recipes", "parsnip", "finetune", "workflowsets", "rsample", "yardstick", "tune"]
 subtitle: ''
 summary: ''
@@ -29,10 +29,11 @@ Pour profiter au maximum de ce tutoriel, merci de vérifier que vous avez une ve
 
 
 
-```r
+``` r
 install.packages(c("tidyverse", "tidymodels", 
                    "glmnet", "ranger", "xgboost", 
                    "finetune", "workflowsets", "corrr", "vip", 
                    "ggforce", "ggrain"))
 ```
-                   
+
+**Lien vers le tutoriel**: <https://abichat.github.io/rr23-tuto-tidymodels/>                   

@@ -34,4 +34,5 @@ install.packages(c("tidyverse", "tidymodels",
                    "finetune", "workflowsets", "corrr", "vip", 
                    "ggforce", "ggrain"))
 ```
-                   
+
+**Lien vers le tutoriel**: <https://abichat.github.io/rr23-tuto-tidymodels/>                   

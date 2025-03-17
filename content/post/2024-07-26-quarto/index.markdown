@@ -3,7 +3,7 @@ title: Utiliser quarto pour ses communications scientifiques
 author: State of the R
 date: '2024-05-03'
 slug: quarto
-categories: ["workshop"]
+categories: ["HappyR", "workshop"]
 tags: ["quarto", "communication", "Rmarkdown", "Jupyter"]
 subtitle: ''
 summary: ''
@@ -39,4 +39,4 @@ Venez découvrir et partager autours des solutions offertes par quarto pour réd
 ## Supports
 
 Les diapos sont en ligne  [ici](http://cedric.midoux.pages.mia.inra.fr/slides/posts/2024-05-03_quarto-happyR/)
-et le TP [là](http://cedric.midoux.pages.mia.inra.fr/slides/posts/2022-12-08_quartoblog/)
+et le TP [là](http://cedric.midoux.pages.mia.inra.fr/slides/posts/2022-12-08_quartoblog/).
