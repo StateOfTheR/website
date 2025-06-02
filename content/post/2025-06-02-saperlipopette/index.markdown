@@ -46,6 +46,6 @@ Maëlle a prévu deux démos en utilisant [Positron](https://positron.posit.co/)
 
 ### Intervenante : [Maëlle Salmon](https://masalmon.eu/)
 
-### Diapos :
+### Diapos : <https://happyr-git.netlify.app/#/>
 
 
