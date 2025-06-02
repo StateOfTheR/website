@@ -29,9 +29,23 @@ Apprenez trois raisons pour lesquelles les petits commits Git valent la peine. D
 - Installation locale de Git. <https://happygitwithr.com/install-git> + <https://happygitwithr.com/hello-git>
 - Installation de `{saperlipopette}`. <https://docs.ropensci.org/saperlipopette/>
 
+Astuce pour vérifier et si besoin modifier le choix de son éditeur de git sous R avec `{gert}`:
+
+``` r
+# verifier sa configuration
+config <- gert::git_config_global()
+# verifier si on a une configuration par defaut pour l editeur
+config$value[config$name == "core.editor"]
+# faire la modification
+gert::git_config_global_set(name = "core.editor", value = <QUOI>)
+# Par exemple "/usr/bin/positron --wait"
+```
+
 Maëlle a prévu deux démos en utilisant [Positron](https://positron.posit.co/), si vous voulez tester aussi vous pouvez l'installer et installer l'extension `GitLens`. Mais les exercices peuvent se faire peu importe dans quelle interface vous utilisez R et Git!
 
 
 ### Intervenante : [Maëlle Salmon](https://masalmon.eu/)
+
+### Diapos :
 
 
