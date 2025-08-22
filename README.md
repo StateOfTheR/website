@@ -43,7 +43,7 @@ pour ajouter lieu et année
 
 - ajouter dans le dossier (i) la photo de groupe (nommer le fichier featured.jpg)et (ii) un fichier `index.md`
 
-Il est préférable d'utiliser la commande blogdown::new_content("project/finistR2022/index.md")
+Il est préférable d'utiliser la commande blogdown::new_content("project/finistRAA/index.md")
 
 ## Remarques :
 

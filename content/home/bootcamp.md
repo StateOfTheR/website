@@ -52,4 +52,4 @@ view = 1
 
 +++
 
-Dans le même esprit que les ateliers mensuels, les  _bootcamp_ Finist'R (c) sont des ateliers d'une semaine que nous avons organisés à Roscoff (en 2017, 2019, 2020, 2021, 2023, 2024), à Beg-Meil en 2018 et à Paimpont en 2022.
+Dans le même esprit que les ateliers mensuels, les  _bootcamp_ Finist'R (c) sont des ateliers d'une semaine que nous avons organisés à Roscoff (en 2017, 2019, 2020, 2021, 2023, 2024, 2025), à Beg-Meil en 2018 et à Paimpont en 2022.
