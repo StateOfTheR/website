@@ -17,14 +17,12 @@ image:
 projects: []
 ---
 
-Le groupe [Biopuces](https:://biopuces.netlify.app/) et le réseau StateOftheR organisent le **mardi 9 décembre 2025** de **9h30 à 12h30** un tutoriel donné
-par [Arthur Tenenhaus](), Laboratoire des Signaux et Systèmes, CentraleSupelec, Université Paris-Saclay
+Le groupe [Biopuces](https:://biopuces.netlify.app/) et le réseau StateOftheR ont organisé le **mardi 9 décembre 2025** de **9h30 à 12h30** un tutoriel donné
+par [Arthur Tenenhaus](https://l2s.centralesupelec.fr/u/tenenhaus-arthur/), Laboratoire des Signaux et Systèmes, CentraleSupelec, Université Paris-Saclay
 
-La séance aura lieu en mode hybride, à la fois sur le campus AgroParisSaclay et à distance.
+## Title:  Multiblock data analysis with `{RGCCA}` package
 
-Title: Multiblock data analysis with `{RGCCA}` package
-
-Abstract: 
+## Abstract: 
 
 Multiblock component methods are essential tools for exploring complex relationships between
 multiple sets of variables. Although various statistical methods and dedicated software for
@@ -37,10 +35,16 @@ of the RGCCA package will be illustrated through two real-world case studies. Th
 available from the Comprehensive R Archive Network (CRAN) at [https://CRAN.R-project.org/package=RGCCA](https://CRAN.R-project.org/package=RGCCA) and
 from GitHub at [https://github.com/rgcca-factory/RGCCA](https://github.com/rgcca-factory/RGCCA).
 
+## Matériel
+
+Cliquez pour récupérer le [support de présentation](../../post/rgcca/RGCCA@Agro.pdf) ainsi que  le [support pour la partie pratique](../../post/rgcca/tutorial_rgcca_package.Rmd).
+
+## Références
+
 
 ### Informations pratiques
 
-Le tutoriel aura lieu sur le campus AgroParisSaclay, 22 place de l'agronomie à Palaiseau et à distance. 
+Le tutoriel s'est déroulé sur le campus AgroParisSaclay, 22 place de l'agronomie à Palaiseau et à distance. 
 
 
 

@@ -1,0 +1,408 @@
+---
+title: "Regularized Generalized Canonical Correlation Analysis: from theory to practice"
+author: "The dream team"
+date: '`r Sys.Date()`'
+output:
+  pdf_document:
+    fig_caption: yes
+    fig_height: 8
+    fig_width: 8
+    number_sections: yes
+    toc: yes
+  html_document:
+    toc: yes
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, fig.height=7, fig.width=8)
+```
+
+
+# Introduction
+
+On Charge les packages et les fonctions utiles
+
+```{r}
+
+# Chargement des packages
+library(RGCCA)
+```
+
+# Initiation à l'analyse canonique généralisée régularisée au travers du package RGCCA
+
+## Analyse du jeu de données Russett
+
+On charge le jeu de données Russett
+
+```{r}
+data(Russett)
+head(Russett)
+```
+
+Une fois les données chargées, on construit nos blocs de données.
+
+```{r}
+X1 = Russett[, 1:3] # Création du bloc 1
+X2 = Russett[, 4:5]  # Création du bloc 2
+X3 = Russett[, c(6:9, 11)] # Création du bloc 3
+```
+
+Chaque bloc est stocké dans une liste, qu'on visualise
+
+```{r}
+L = list(Agric = X1, DevInd = X2, Polit = X3)
+lapply(L, head)
+```
+
+On construit ensuite la matrice de design qui code le schéma structurel entre blocs
+
+```{r}
+C = matrix(c(0, 0, 1, 0, 0, 1, 1, 1, 0), 3, 3)
+C
+```
+
+On construit enfin le vecteur de paramètres de régularisation $\tau = (\tau_1, \tau_2, \tau_3)$.
+
+```{r}
+tau = c(1, 1, 1)
+tau 
+```
+
+On peut appeler maintenant la fonction rgcca()
+
+```{r}
+fit = rgcca(L, connection = C, tau = tau, 
+            scheme = function(x) x^2, ncomp = 1, 
+            init = "random", verbose = TRUE, tol = 1e-16)
+fit$a
+
+#avec NA blockwise
+L[[1]][sample(47, 5),] = NA 
+L[[2]][sample(47, 5),] = NA 
+L[[3]][sample(47, 5),] = NA
+
+# ou ponctuel
+L[[3]][1, 1] = NA
+
+fit_NA = rgcca(L, connection = C, tau = tau, 
+            scheme = function(x) x^2, ncomp = 1, 
+            init = "random", verbose = TRUE, tol = 1e-16) # gestion des NA avec algo type NIPALS
+fit_NA$a
+```
+
+... et regarder la contribution des variables à la construction des composantes
+
+```{r}
+plot(fit, display_order = FALSE) # attention lon g à l'affichage
+```
+
+On construit ensuite les intervalles de confiance bootstap
+
+```{r}
+boot_out = rgcca_bootstrap(fit, 500)
+# remarque on peut paralléliser
+```
+On reporte les résultats en utilsant la fonction summary()
+
+```{r}
+summary(boot_out)
+```
+
+Ces résultats peuvent être visualisés en utilisant la fonction plot
+
+```{r}
+plot(boot_out, display_order = FALSE) # organisé par bloc; sinon par valeur du poids
+```
+
+On peut également visualiser la carte des individus.
+
+```{r, fig.cap = 'Factor plot (Russett data) - y1 vs y2'}
+
+lab = factor(apply(Russett[, 9:11], 1, which.max),
+labels = c("demostab", "demoinst", "dictator"))
+
+plot(fit, type = "sample", resp = lab, repel = TRUE) # repel = TRUE décale les points quand se superpose 
+plot(fit, type = "sample", resp = lab, block = 1:2, comp = c(1,1))
+```
+
+Tous les paramètres du modèles ont été fixés manuellement. Nous allons 
+maintenant mettre en oeuvre quelques procédures permettant de déterminer 
+de manière automatique les hyperparamètres.
+
+## Higher-level block components
+
+```{r}
+fit = rgcca(L, connection = C, tau = tau, 
+            scheme = function(x) x^2, ncomp = 2, 
+            init = "random", verbose = TRUE, tol = 1e-16, compo_orth = TRUE)
+
+crossprod(fit$Y[[1]])
+
+plot(fit, type = "sample", block = 2, comp = 1:2, response = lab, 
+     sample_colors = c("green4", "blue4", "red4"),
+     repel = T, cex = 1.2)
+
+```
+
+# RGCCA et sélection de modèle
+
+## Formule de Ledoit et Wolf
+
+```{r}
+fit = rgcca(L, connection = C, tau = "optimal", 
+            scheme = function(x) x^2, ncomp = 1,
+            init = "random", verbose = TRUE, tol = 1e-16)
+
+summary(fit)
+fit$call$tau
+```
+
+## RGCCA et permutation
+
+```{r}
+perm_out = rgcca_permutation(L, connection = C, par_type = "tau", 
+                              par_length = 10, n_perms = 50, 
+                              scheme = "factorial")
+
+summary(perm_out)
+plot(perm_out)
+
+```
+
+## Supervised RGCCA
+
+```{r}
+X1 = Russett[, 1:3] # Création du bloc 1
+X2 = Russett[, 4:5]  # Création du bloc 2
+X3 = Russett[, 6:8] # Création du bloc 3
+lab = factor(apply(Russett[, 9:11], 1, which.max),
+labels = c("demostab", "demoinst", "dictator"))
+L1 = list(Agric = X1, Ind = X2, Polit = X3, Regime = lab)
+
+set.seed(123456789)
+in_train <- caret::createDataPartition(L1[[4]], p = .75, list = FALSE)
+training <- lapply(L1, function(x) as.matrix(x)[in_train, , drop = FALSE])
+# verif
+sapply(training, dim)
+testing <- lapply(L1, function(x) as.matrix(x)[-in_train, , drop = FALSE])
+sapply(testing, dim)
+
+cv_out = rgcca_cv(training, response = 4, par_type = "tau",
+                  prediction_model = "lda",
+                  metric = "Balanced_Accuracy",
+                  k = 3, n_run = 5) # La réponse peut être un bloc, beaucoup de métriques possibles kfold répété 5 fois
+summary(cv_out)
+plot(cv_out)
+
+# En deux étapes indépendantes, modèles construits à l'échelle des composantes
+
+fit_opt = rgcca(cv_out)
+summary(fit_opt)
+
+
+prediction = rgcca_predict(fit_opt, blocks_test = testing)
+prediction$confusion$test
+```
+
+#RGCCA et espace consensus
+
+```{r}
+fit = rgcca(L, superblock = TRUE, connection = C, tau = c(1, 1, 1, 0),  
+            scheme = function(x) x^2, ncomp = c(2, 2, 2),
+            init = "random", verbose = TRUE, tol = 1e-16)
+
+summary(fit)
+
+plot(fit, type = "sample", block = 4, comp = 1:2, 
+     response = lab)
+plot(fit, type = "cor_circle")
+plot(fit, type = "biplot", response = lab)
+
+#Exemple en spécifiant l'argument method
+
+fit.mcoa = rgcca(L, method = "mcoa", ncomp = 2)
+summary(fit.mcoa)
+```
+
+
+
+A fin d'évaluer les relations entre blocs, on peut calculer la corrélation entre composantes.
+
+```{r}
+plot(fit.mcoa, type = "cor_circle", comp = 1:2)
+```
+
+
+# Glioma Data set
+
+On charge le jeu de données Glioma et on construit les blocs
+
+```{r}
+library(gliomaData)
+data(ge_cgh_locIGR)
+A <- ge_cgh_locIGR$multiblocks
+Loc <- factor(ge_cgh_locIGR$y)
+levels(Loc) <- colnames(ge_cgh_locIGR$multiblocks$y)
+A$y = Loc
+```
+ 
+ On regarde la dimension des blocs
+ 
+```{r}
+sapply(A, dim)
+```
+
+## Analyse de Glioma avec RGCCA
+
+- Commentaires : Compte tenu de la dimension des blocs, la version duale de RGCCA va étre utilisée.
+
+On construit ensuite la matrice C 
+
+```{r}
+C = matrix(c(0, 0, 1, 0, 0, 1, 1, 1, 0), 3, 3)
+C
+```
+
+On cherche des composantes y1 et y2 bien explicatives de leur propre bloc et corrélées à y3 (on ne cherche pas une composante y3 explicative de X3). Par conséquent, on pose $\tau$ comme suit
+
+```{r}
+tau = c(1, 1, 0)
+```
+
+On construit également deux composantes par bloc pour X1 et X2 (par déflation). On peut utiliser l'argument ncomp de RGCCA.
+
+```{r}
+fit.rgcca = rgcca(A, response = 3, 
+                  tau = tau, 
+                  init = "random", ncomp = 2, 
+                  tol = 1e-16, verbose = TRUE)
+```
+
+Au passage, peut vérifier que les composantes de chaque bloc sont bien orthogonales
+
+```{r}
+crossprod(fit.rgcca$Y[[1]])
+```
+
+```{r}
+crossprod(fit.rgcca$Y[[2]])
+```
+
+On constate également que toutes les variables participent à la construction de 
+$y_1$ et $y_2$.
+
+```{r}
+summary(fit.rgcca)
+apply(fit.rgcca$a[[1]], 2, function(x) sum(x==0))
+```
+
+```{r}
+apply(fit.rgcca$a[[2]], 2, function(x) sum(x==0))
+```
+
+Enfin, on peut visualiser les individus sur les espaces engendrées par les composantes Y1 (GE) vs Y2 (CGH) ou Y1 (GE) vs Y2 (GE).
+
+```{r, fig.cap = 'Factorial plan of RGCCA, Y1 (GE) vs Y2 (CGH)'}
+plot(fit.rgcca, type= "sample", comp = 1, block = 1:2,
+     title = "Factorial plan of RGCCA", resp = Loc)
+```
+
+```{r, fig.cap = 'Factorial plan of RGCCA, Y1 (GE) vs Y2 (GE)'}
+plot(fit.rgcca, type= "sample", comp = 1:2, block = 1,
+     title = "Factorial plan of RGCCA", resp = Loc)
+```
+
+```{r}
+plot(fit.rgcca, type= "sample", comp = 1:2, block = 2,
+     title = "Factorial plan of RGCCA", resp = Loc)
+```
+
+
+Pour faciliter l'interprétation des résultats, on se propose d'utiliser une extension sparse de RGCCA (SGCCA). 
+
+## Analyse de Glioma avec sGCCA
+
+La fonction rgcca() disponible librement dans le package RGCCA va donc être utilisée.
+
+```{r}
+fit.sgcca = rgcca(A, method = "sgcca", 
+                  response = 3,
+                  sparsity = c(.071,0.2, 1), 
+                  ncomp = c(2, 2, 1), 
+                  verbose = TRUE)
+```
+
+un bref résumé est renvoyé ci-dessous : 
+
+```{r}
+summary(fit.sgcca)
+```
+
+
+Pour le bloc d'expression, les nombres d'éléments non nuls pour $\mathbf w_{11}$ et $\mathbf w_{12}$ valent `r apply(fit.sgcca$a[[1]], 2, function(x) sum(x!=0))`. Les variables retenues sur la première dimension sont reportées ci-dessous :
+
+```{r}
+colnames(A[[1]])[which(fit.sgcca$a[[1]][, 1]!=0)]
+```
+
+Pour le bloc CGH, les nombres d'éléments non nuls pour $\mathbf w_{21}$ et $\mathbf w_{22}$ valent `r apply(fit.sgcca$a[[2]], 2, function(x) sum(x!=0))`. Les variables retenues sur la première dimension sont reportées ci-dessous :
+
+```{r}
+colnames(A[[2]])[which(fit.sgcca$a[[2]][, 1]!=0)]
+```
+
+Enfin, on peut visualiser les individus sur les espaces engendrés par les composantes Y1 (GE) vs Y2 (CGH) ou Y1 (GE) vs Y2 (GE)
+
+```{r, fig.cap = 'Factorial plan of SGCCA, Y1 (GE) vs Y2 (CGH)'}
+plot(fit.sgcca, type = "sample", resp = Loc, 
+     block = 1:2, comp = 1,
+     title = "Factorial plan of SGCCA")
+```
+
+```{r, fig.cap = 'Factorial plan of RGCCA, Y1 (GE) vs Y2 (GE)'}
+plot(fit.sgcca, type = "sample", block = 1, comp = 1:2, 
+     resp = Loc, title = "Factorial plan of SGCCA")
+```
+
+## Glioma avec sGCCA et cross-validation
+
+On peut utiliser la fonction `rgcca_cv()` pour déterminer les hyper-paramètres.
+
+```{r}
+cv_out <- rgcca_cv(A, response = 3,
+                   par_type = "sparsity",
+                   par_length = 10,
+                   ncomp = 1,
+                   prediction_model = "lda",
+                   metric = "Balanced_Accuracy",
+                   k = 3, n_run = 5,
+                   n_cores = 15)
+```
+
+La fonction `summary()` peut être utilisée pour parcourir les résultats de cette validation croisée.
+
+```{r}
+summary(cv_out)
+```
+
+et la fonction `plot()` pour les visualiser
+
+```{r}
+plot(cv_out) 
+```
+
+On peut vouloir stabiliser la procédure de sélection de variables. Pour ce faire, 
+on utilise la fonction rgcca_stability()
+
+```{r}
+fit_opt = rgcca(cv_out)
+stab_out = rgcca_stability(fit_opt)
+summary(stab_out$rgcca_res)
+
+
+boot_out = rgcca_bootstrap(stab_out)
+plot(boot_out, display_order = F, n_mark = 50, block = 1:2)
+```
+
+
