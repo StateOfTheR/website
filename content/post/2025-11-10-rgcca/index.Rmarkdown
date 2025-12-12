@@ -1,6 +1,10 @@
 ---
 title: Analyse de données multi-blocs avec `{RGCCA}`
 author: State of the R
+bibliography: rgcca.bib 
+link-citations: true
+nocite: |
+  @*
 date: '2025-11-10'
 slug: rgcca
 categories: ["HappyR", "workshop"]
@@ -37,14 +41,11 @@ from GitHub at [https://github.com/rgcca-factory/RGCCA](https://github.com/rgcca
 
 ## Matériel
 
-Cliquez pour récupérer le [support de présentation](../../post/rgcca/RGCCA@Agro.pdf) ainsi que  le [support pour la partie pratique](../../post/rgcca/tutorial_rgcca_package.Rmd).
+Cliquez pour récupérer le [support de présentation](../../post/rgcca/RGCCA@Agro.pdf) ainsi que  le [support pour la partie pratique](../../post/rgcca/tutorial_rgcca_package.Rmd) et [les données](../../post/rgcca/data/gliomaData_0.4.tar.gz) .
 
 ## Références
 
 
-### Informations pratiques
-
-Le tutoriel s'est déroulé sur le campus AgroParisSaclay, 22 place de l'agronomie à Palaiseau et à distance. 
 
 
 
