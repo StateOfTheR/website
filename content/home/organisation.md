@@ -17,11 +17,15 @@ autolink = false
 
 ## Fonctionnement des ateliers participatifs
 
-Le groupe se réunit à [AgroParisTech](http://www.agroparistech.fr) au cours d'ateliers mensuels de 3 heures autour d'un thème prédéfini. Chaque atelier est animé par quelques membres (généralement deux ou trois) qui se chargent de présenter les enjeux du thème, fournir le bagage méthodologique nécessaire, et proposer des travaux pratiques. 
+Le groupe se réunit sur le campus Agro Paris Saclay au cours d'ateliers bimestriels de 3 heures autour d'un thème prédéfini. Chaque atelier est animé par quelques membres (généralement deux ou trois) qui se chargent de présenter les enjeux du thème, fournir le bagage méthodologique nécessaire, et proposer des travaux pratiques. 
 
 Nous pensons qu'il est important que l'ensemble des participants s'investissent dans l'animation pour préserver l'esprit des ateliers. Les places sont donc limitées à une trentaine par séance.
 
 <a href="#past_workshops" class="btn btn-primary btn-outline btn-large">Voir les ateliers passés </a>
+
+## Venir sur le campus
+
+Le campus Agro Paris Saclay se situe, 22 place de l'Agronomie à Palaiseau (GPS : 48.71401 2.1964). Les modes d'accès sont détaillés [ici](https://www.agroparistech.fr/venir-au-campus-agro-paris-saclay). 
 
 ## Devenir membre
 
