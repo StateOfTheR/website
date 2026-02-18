@@ -20,8 +20,6 @@ projects: []
 Le réseau StateOftheR a organisé le **mardi 17 février 2026** de **9h30 à 12h30** un tutoriel donné
 par [Chitu Okoli](https://www.skema.edu/fr/facultes-et-recherche/professeurs/chitu-okoli), SKEMA Business School, Paris
 
-## Title:  Inférence statistique inductive et apprentissage automatique interprétable avec le package R `{ale}`
-
 ## Résumé : 
 
 Interpréter la manière dont les variables explicatives influencent les résultats demeure un défi central dans les modèles statistiques et d’apprentissage automatique. Cet atelier met en avant les accumulated local effects (ALE) comme cadre général à la fois pour la visualisation et pour l’inférence quantitative à l'aide du package R `{ale}` ([https://tripartio.github.io/ale/](https://tripartio.github.io/ale/)). Nous introduisons de nouvelles mesures de taille d’effet fondées sur les ALE, notamment ALE deviation (l’écart ALE) et ALE range (l’étendue ALE), ainsi que leurs variantes normalisées, afin de fournir des résumés compacts et interprétables de l’influence des prédicteurs, en complément des graphiques ALE standards. Nous étendons également les ALE par des méthodes d’inférence basées sur le rééchantillonnage, permettant d’identifier des effets susceptibles d’être généralisés de manière fiable au-delà des données observées. Ces développements autorisent une interprétation rigoureuse sans exclure des variables pertinentes ni imposer d’hypothèses a priori fortes sur la forme fonctionnelle. À travers des analyses empiriques, les statistiques ALE proposées produisent des résultats clairs et stables pour des modèles entraînés sur des jeux de données de petite comme de grande taille, favorisant l’analyse exploratoire tout en limitant les conclusions fallacieuses. Dans l’ensemble, ces résultats positionnent les ALE non seulement comme un outil de visualisation, mais aussi comme une base robuste et indépendante du modèle pour une inférence statistique interprétable.
@@ -39,9 +37,9 @@ D'autres packages peuvent être nécessaires en fonction des vignettes suivies.
 
 ## Matériel
 
-Cliquez pour récupérer le [support de présentation](../../post/ale/Okoiale20260217StateoftheR.pdf).
+Le support de présentation est téléchargeable [ici](../../post/ale/Okoiale20260217StateoftheR.pdf).
 
-Pour la partie pratique, une partie des vignettes du site ont été explorées. La liste est disponible ci-dessous :
+Côté application, une partie des vignettes du site ont été explorées. La liste est disponible ci-dessous :
 
 - [Introduction to the ale package ale](https://tripartio.github.io/ale/articles/ale-intro.html)    
 - [ALE-based statistics for statistical inference and effect sizes ale](https://tripartio.github.io/ale/articles/ale-statistics.html)
