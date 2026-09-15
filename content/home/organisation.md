@@ -31,7 +31,7 @@ Le campus Agro Paris Saclay se situe, 22 place de l'Agronomie à Palaiseau (GPS 
 
 Pour participer à ces ateliers, un aspirant membre peut assister à une séance pour jauger la teneur des séances et évaluer le niveau des participants. Il s'engage ensuite à animer une séance en proposant un atelier.
 
-<a href="mailto:stateofr@gmail.com?subject=[State%20of%20The%20R]%20Participation" class="btn btn-primary btn-outline btn-large"><i class="fa fa-cog"></i> participer ?</a>
+# <a href="mailto:stateofr@gmail.com?subject=[State%20of%20The%20R]%20Participation" class="btn btn-primary btn-outline btn-large"><i class="fa fa-cog"></i> participer ?</a>
 
 ## Animation
 

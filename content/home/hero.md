@@ -4,7 +4,7 @@ widget = "hero"
 headless = true  # This file represents a page section.
 active = true
 
-title = "State of The R"
+title = "StateofTheR"
 
 # Order that this section will appear in.
 weight = 1
@@ -44,6 +44,7 @@ weight = 1
 +++
 
 <span style="text-shadow: none;">
-Groupe de chercheurs et d'ingénieurs se réunissant pour approfondir leur savoir-faire, perfectionner la diffusion de leurs méthodes statistiques et échanger autour des dernières innovations de `R` et `RStudio` ou autres outils utiles.</span>
+Groupe de chercheurs et d'ingénieurs se réunissant pour approfondir leur savoir-faire, perfectionner la diffusion de leurs méthodes statistiques et échanger autour des dernières innovations de langages de programmation dédiés à l’analyse statistique et à la science des données, 
+principalement R, mais également Python et Julia et autres outils utiles.</span>
 
 <a href="http://www.github.com/StateOftheR" class="github-button"><script async defer src="https://buttons.github.io/buttons.js"></script> groupe github</a> 
