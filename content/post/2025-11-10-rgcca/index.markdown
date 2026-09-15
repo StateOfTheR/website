@@ -1,7 +1,7 @@
 ---
 title: Analyse de données multi-blocs avec `{RGCCA}`
 author: State of the R
-bibliography: rgcca.bib 
+bibliography: rgcca.bib
 link-citations: true
 nocite: |
   @*
@@ -55,7 +55,7 @@ Garali, Imene, Isaac Adanyeguh, Farid Ichou, Vincent Perlbarg, Alexandre Seyer, 
 
 <div id="ref-girka2023multiblock" class="csl-entry">
 
-Girka, Fabien, Etienne Camenen, Caroline Peltier, Arnaud Gloaguen, Vincent Guillemot, Laurent Le Brusquet, and Arthur Tenenhaus. 2023. “Multiblock Data Analysis with the RGCCA Package.” *Journal of Statistical Software*, 1–36. <https://CRAN.R-project.org/package=RGCCA.>
+Girka, Fabien, Etienne Camenen, Caroline Peltier, Arnaud Gloaguen, Vincent Guillemot, Laurent Le Brusquet, and Arthur Tenenhaus. 2023. “Multiblock Data Analysis with the RGCCA Package.” *Journal of Statistical Software*, 1–36. <https://CRAN.R-project.org/package=RGCCA>
 
 </div>
 
